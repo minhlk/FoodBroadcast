@@ -6,3 +6,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+<<<<<<< HEAD
+=======
+
+## About This Project
+Author : MinhLK
+Contributor : ...update
+Project : Web development 2
+Date start : 4/16/2017
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+>>>>>>> auth
