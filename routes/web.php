@@ -22,3 +22,6 @@ Route::get('/search',"searchcontroller@getQuery");
 Route::get('/cart', function(){
 	return view('cart');
 });
+//for login logout
+Auth::routes();
+

@@ -51,8 +51,30 @@
                 </form>
             </li>
             <li><a href="#about" data-toggle="modal" data-target="#search">Tìm nâng cao</a></li>
-            <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li>
-            <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li>
+            @if (Auth::guest())
+            <li><a href="#about" data-toggle="modal" data-target="#login" data-backdrop="static" data-keyboard="false">Đăng nhập</a></li>
+            <li><a href="#about" data-toggle="modal" data-target="#register" data-backdrop="static" data-keyboard="false">Đăng ký</a></li>
+            @else
+            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+            @endif
 </ul>        
             
           
