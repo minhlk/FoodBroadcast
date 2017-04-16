@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Hãy ăn theo cách của bạn</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="../css/bootstrap.css">
+        <!-- ICON CSSS -->
+    <link rel="stylesheet" href="../font/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom_css.css">
+    <style type="text/css">
+    .img-thumbnail{
+    padding: 0px;
+
+    }
+    .location{
+      float: left;
+    }
+      #chitiettin .title_chitiet h3{
+        font-size: 21px;
+      }
+#chitiettin .title_chitiet{
+  text-align: center;
+
+}
+#chitiettin .details_chitiet{
+  text-align: left;
+}
+
+#chitiettin .datcho_chitiet{
+  text-align: left;
+}
+hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+label{
+  color: red;
+}
+
+    </style>
+</head>
+
+
+
+<body>
+<!-- NAVIGATION BAR START -->
+<nav class="navbar navbar-inverse navbar-fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-weight: bold; " href="../admin_index.html">Bảng Admin</a>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse " aria-expanded="false" style="height: 1.5015px;">
+          <ul class="nav navbar-nav ">
+            <!-- <li class="active"><a href="./index.html">Trang Chủ</a></li> -->
+           <!--  <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li>
+            <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li>
+            -->
+               <li class="">
+              <a  href="../admin_index.html">Danh sách sản phẩm
+              </a>
+            </li> 
+              <li class="">
+              <a  href="../html/dsdondat.html">Danh sách đơn đặt
+              </a>
+            </li> 
+               <li class="">
+              <a  href="../html/dskhachhang.html">Danh sách khách hàng
+              </a>
+            </li> 
+            </li> 
+              <li class="active">
+              <a  href="#">Thêm sản phẩm
+              </a>
+            </li> 
+            <li class="">
+              <a  href="../html/thongke.html">Thống kê
+              </a>
+            </li> 
+            <!-- <li class="dropdown">
+              <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khác <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+               <li><a href="./html/lienhe.html">Liên Hệ</a></li>
+
+                <li><a href="./html/lienhe.html">Về Chúng Tôi</a></li>
+               
+                
+               
+              </ul>
+            </li> -->
+           
+
+             
+                     
+
+            
+          </ul>
+
+
+<ul class="nav navbar-nav" style="float: right;">
+            
+            <li class="timkiem">
+                <form action="./html/timkiem.html" class="navbar-form navbar-right">
+                <div class="input-group">
+                <input type="text" class="form-control" style="float: left; width: auto;">
+                <button  class="btn btn-danger" style="border-top: 1px solid red; float: left;"> Tìm kiếm</button>
+                </div>
+                </form>
+            </li>
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#search">Tìm nâng cao</a></li> -->
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li> -->
+            <li><a href="./admin.html"  >Đăng xuất</a></li>
+</ul>        
+            
+          
+        </div>
+        <!--/.nav-collapse -->
+    
+
+
+
+
+
+      </div>
+    </nav>
+<!-- <div id="body_contain" class="container-fluid text-center" style="margin-top: 56px;"> -->
+  <!-- <div class="row content"> -->
+
+
+ <!-- CENTER CONTAIN START-->
+ <!-- <div class="col-sm-8 "> -->
+   
+
+ 
+ <!-- ITEM ROW 1 IN CENTER START -->
+  <!-- <div class="row">
+<blockquote>
+  <a href="../index.html">Trang Chủ</a>
+</blockquote>
+  <blockquote>
+  <p>Thông tin của : Kọp Milk Tea - Trà Sữa Túi Lọc, Ăn Vặt</p>
+
+</blockquote>
+
+
+  </div> -->
+  <div class="container-fluid">
+<div class=" row" style="margin-top: 56px;">
+<!-- PICTURE START -->
+<div class="col-lg-5  col-md-7 img-thumbnail">
+
+  <img src="../images/im4.jpg">
+<form >
+  <input class="form-control" type="file" value="Chọn File">
+</form>
+
+</div>
+<!-- PICTURE END -->
+<!-- DETAILS START -->
+<div class="col-lg-7 col-md-3" id="chitiettin">
+<form class="form-horizontal">
+  <div class="title_chitiet">
+    <form class="form-group">
+      <label style="width: 100%; text-align: left;" >Tiêu đề </label>
+      <input type="text" class="form-control" value=" "> 
+      </form>
+  
+  </div>
+  
+  <div class="details_chitiet"><h4>Thông tin chi tiết :</h4>
+  <label>Đánh giá :</label>
+  <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+      </div>
+      <form class="form-group">
+      <label>Địa điểm : </label>
+      <input type="text" class="form-control" value="  ">
+      <!-- <label>Địa chỉ Web :</label> 
+      <input type="text" class="form-control" value="#"> -->
+      </form>
+      <!-- <form class="form-group">
+      <label>Địa điểm : </label>
+      <input type="text" class="form-control" value=" ">
+      <label>Địa chỉ Web :</label> 
+      <input type="text" class="form-control" value="#">
+      </form>
+      <form class="form-group">
+      <label>Địa điểm : </label>
+      <input type="text" class="form-control" value=" ">
+      <label>Địa chỉ Web :</label> 
+      <input type="text" class="form-control" value="#">
+      </form> -->
+    
+       <form class="form-group">
+      <label>Tình trạng : </label>
+      <select class="form-control"> 
+        <option>Đang mở cửa</option>
+        <option>Đóng cửa</option>
+      </select>
+      </form>
+      
+    <br>
+    <form class="form-inline">
+      <label>Thời gian từ  : </label>
+      <input type="text" class="form-control" value=" ">
+      <select class="form-control">
+      <option>AM</option>
+        <option>PM</option>
+      </select>
+      <label>Đến </label>
+      <input type="text" class="form-control" value="">
+      <select class="form-control">
+      <option>AM</option>
+        <option>PM</option>
+      </select>
+      </form>
+      <br>
+    <form class="form-inline">
+      <label>Giá tiền từ  : </label>
+      <input type="text" class="form-control" value="">
+      <label>Đến </label>
+      <input type="text" class="form-control" value="">
+      </form>
+      <br>
+  <form class="form-group">
+      <label>Số điện thoại: </label>
+      <input type="text" class="form-control" value="">
+      
+      </form>
+   
+     <label>Hình thức : </label>
+      <select class="selectpicker form-control">
+      <!-- <option>--Hình Thức--</option> -->
+      <option>Sang trọng</option>
+      <option>Buffet</option>
+      <option>Vỉa hè</option>
+      <option>Ăn chay</option>
+      <option>Cà phê</option>
+      <option>Quán ăn </option>
+     <option>Quán nhậu</option>
+      <option>Tiệc tận nwoi</option>
+      <option>Shop online</option>
+     <option> Giao cơm văn phòng</option>
+    </select>
+<br>
+
+      <label>Ẩm thực: </label>
+      <select class="selectpicker form-control">
+      <!-- <option>--Ẩm thực--</option> -->
+    <option>  Nam</option>
+   <option>   Trung</option>
+ <option>     Bắc</option>
+ <option>     Mỹ </option>
+ <option>     Hàn Quốc</option>
+ <option>     Nhật Bản</option>
+ <option>     Campuchia</option>
+ <option>     Ấn Độ</option>
+ <option>     Pháp</option>
+ <option>     Indonesia</option>
+ <option>     Israel</option>
+ <option>     Irac</option>
+ <option>     Iran</option>
+  <option>    Dân Tộc</option>
+    </select>
+    
+    </div>
+  </div>
+ 
+  
+
+  <!-- <form  class="form-group">
+
+    <label >Khu vực :</label>
+   <select class="form-control">
+     <option>Hồ Chí Minh</option>
+     <option>Hà Nội</option>
+     <option>...</option>
+
+   </select>
+  </form> -->
+   <div style="width: 100%; margin-top: 10px; text-align: center;" >
+        <!-- <a href="#" onclick="confirm('Bạn có chắc muốn sửa')" class="btn btn-danger" role="button">Sửa</a> -->
+         <!-- <a href="#" onclick="confirm('Bạn có chắc muốn xóa')" class="btn btn-danger" role="button">Xóa</a> -->
+<a href="#" onclick="confirm('Bạn có chắc muốn tạo mới')" class="btn btn-danger" role="button">Thêm mới</a>
+   </div>
+   
+<hr style="margin-top: 12px;">
+
+</div>
+
+
+
+  </form>
+</div>
+<!-- DETAIL END -->
+ <!-- ITEM 1  START-->
+   
+<!-- ITEM 1  END-->
+ <!-- </div> -->
+
+<!-- <hr> -->
+<!-- <div class="row">
+<div class="col-lg-2 col-md-2"></div>
+  <div class="col-lg-4 col-md-4 img-thumbnail" ><img style="  " src="../images/im4.jpg"></div>
+  <div class="col-lg-4 col-md-4 img-thumbnail "><img style="  " src="../images/im4.jpg"></div>
+  <div class="col-lg-2 col-md-2"></div>
+</div> -->
+<!-- <div class=" container-fluid">
+  <ul class="pagination">
+    <li class="active"><a href="../index.html">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">Trang kế</a></li>
+    <li><a href="#">Trang cuối</a></li>
+  </ul>
+
+</div> -->
+
+
+
+
+ 
+
+<!-- </div> -->
+ </div> 
+
+ <!-- CENTER CONTAIN END-->
+
+ 
+
+
+<!-- </div> -->
+<!-- </div> -->
+
+
+</body></html>

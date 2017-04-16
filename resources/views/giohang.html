@@ -1,0 +1,846 @@
+﻿
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Hãy ăn theo cách của bạn</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="../css/bootstrap.css">
+        <!-- ICON CSSS -->
+    <link rel="stylesheet" href="../font/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom_css.css">
+    <style type="text/css">
+    .img-thumbnail{
+    padding: 0px;
+
+    }
+    .location{
+      float: left;
+    }
+      #chitiettin .title_chitiet h3{
+        font-size: 21px;
+      }
+#chitiettin .title_chitiet{
+  text-align: center;
+
+}
+#chitiettin .details_chitiet{
+  text-align: left;
+}
+
+#chitiettin .datcho_chitiet{
+  text-align: left;
+}
+hr {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    width: 100%;
+}
+label{
+  color: red;
+}
+
+
+    </style>
+</head>
+
+
+
+<body>
+
+<!-- NAVIGATION BAR START -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-weight: bold; " href="../index.html">Quảng Bá Thức Ăn</a>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse " aria-expanded="false" style="height: 1.5015px;">
+          <ul class="nav navbar-nav ">
+            <li class=""><a href="../index.html">Trang Chủ</a></li>
+           <!--  <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li>
+            <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li>
+            -->
+             <li class="active">
+              <a   href="../html/giohang.html">Giỏ hàng
+              </a>
+            </li> 
+            <li class="dropdown">
+              <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khác <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+               <li><a href="../html/lienhe.html">Liên Hệ</a></li>
+
+                <li><a href="../html/lienhe.html">Về Chúng Tôi</a></li>
+               
+                
+               
+              </ul>
+            </li>
+           
+
+             
+                     
+
+            
+          </ul>
+
+
+<ul class="nav navbar-nav" style="float: right;">
+            
+            <li class="timkiem">
+                <form action="../html/timkiem.html" class="navbar-form navbar-right">
+                <div class="input-group">
+                <input type="text" class="form-control" style="float: left; width: auto;">
+                <button  class="btn btn-danger" style="border-top: 1px solid red; float: left;"> Tìm kiếm</button>
+                </div>
+                </form>
+            </li>
+            <li><a href="#about" data-toggle="modal" data-target="#search">Tìm nâng cao</a></li>
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li> -->
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li> -->
+            <li><a href="#about" >Chào Bạn User Name</a></li>
+             <li><a href="../index.html" >Đăng xuất</a></li>
+</ul>        
+            
+          
+        </div>
+        <!--/.nav-collapse -->
+    
+
+
+
+
+
+      </div>
+    </nav>
+
+
+  <!-- MODEL START -->
+
+
+
+  
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Đăng nhập</h4>
+        </div>
+        <div class="modal-body">
+                                 <form action="../html/dadangnhap.html"  class="form-horizontal">
+                                      <div class="form-group">
+                                        
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pwd">Mật khẩu:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Nhập password">
+                                      </div>
+                                      <div class="checkbox">
+                                        <label><input type="checkbox">Nhớ đăng nhập</label>
+                                      </div>
+                                      <button type="submit" class="btn btn-danger">Xác nhận</button>
+                                </form>
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ----------- -->
+
+ 
+  <div class="modal fade" id="search" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Tìm kiếm nâng cao</h4>
+        </div>
+        <div class="modal-body">
+                                 <form action="../html/timkiem.html" class="form-horizontal">
+                                      <div class="form-group">
+                                        <label for="keyword">Từ khóa</label>
+                                        <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="price">Giá </label>
+                                        <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
+                                        <select class="form-control" id="price">
+                                          <option> 1</option>
+                                           <option> 1</option>
+                                            <option> 1</option>
+                                             <option> 1</option>
+                                        </select>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="place">Khu vực</label>
+                                        <select class="form-control" id="place">
+                                            <option> hcm</option>
+                                            <option>hà nội</option>
+                                        </select>
+
+                                      </div>
+                                       <div class="form-group">
+                                        <label for="like">Lượt yêu thích</label>
+                                        <select class="form-control" id="like">
+                                            <option> dưới 100</option>
+                                            <option>trên 1000</option>
+                                        </select>
+
+                                      </div>
+                                      <br><br>
+                                      <div class="form-group">
+                                        <label for="soluong"> Số chỗ đặt</label>
+                                          <input type="number" class="form-control" name="" id="soluong">
+                                      </div>
+
+                                     <div class="form-group">
+                                     <label>Xu hướng</label><br>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="check"> Nóng bỏng
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="check"> Mới
+                                        </label>
+                                        <label class="radio-inline">
+                                          <input type="radio" name="check"> Cũ
+                                        </label>
+                                     </div>
+
+                                     <br>
+                                      <button type="submit" class="btn btn-danger">Tìm kiếm</button>
+                                </form>
+
+
+<!-- 
+tình trạng (số chỗ còn lại)
+lượt yêu thích
+
+
+ -->
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ----------- -->
+<div class="modal fade" id="register" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Đăng Ký</h4>
+        </div>
+        <div class="modal-body">
+                                 <form action="../html/dadangnhap.html" class="form-horizontal">
+                                      <div class="form-group">
+                                        
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pwd">Mật khẩu:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Nhập password">
+                                      </div>
+                                       <div class="form-group">
+                                        <label for="pwd">Nhập lại mật khẩu:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password">
+                                      </div>
+                                     
+                                      <button type="submit" class="btn btn-danger">Đăng ký</button>
+                                </form>
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODEL END -->
+
+
+
+
+<!-- BANNER START -->
+<!-- <div class="row"> -->
+<!-- <div id="carousel-example-generic" class="carousel slide col-lg-8" data-ride="carousel" style="padding-top: 50px;"> -->
+<!-- <div id="carousel-example-generic" class="carousel slide " data-ride="carousel" style="padding-top: 50px;">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide [1140x500]" src="../images/banner1.png" data-holder-rendered="true">
+          </div>
+          <div class="item active">
+            <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide [1140x500]" src="../images/banner2.gif" data-holder-rendered="true">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide [1140x500]" src="../images/banner1.png" data-holder-rendered="true">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> -->
+
+      <!-- <div class="col-lg-4">abc</div> -->
+<!-- </div> -->
+<!-- BANNER END  -->
+
+<!-- </div> -->
+<!-- NAVIGATION BAR END -->
+<div id="body_contain" class="container-fluid text-center" style="margin-top: 52px;">
+  <div class="row content">
+
+ <!-- LEFT CONTAIN START-->
+ <div class="col-sm-2 sidenav">
+<!-- ITEM 1 START -->
+    <div class="list-group">
+                <a href="../index.html" data-toggle="collapse" class="list-group-item active">
+                  Danh mục
+                </a>
+ 
+               
+                <a href="#danhmuc1" data-toggle="collapse" class="list-group-item text-left active">Ăn gì</a>
+                     <div class="list-group collapse" id="danhmuc1">
+                      <a href="../index.html" class="list-group-item text-left">Món ngon hằng ngày</a>
+                      <a href="../index.html" class="list-group-item text-left">Được yêu thích nhất trong tuần</a>
+                      <a href="../index.html" class="list-group-item text-left">Được yêu thích nhất trong tháng</a>
+                    </div>
+                <!-- <a href="#" class="list-group-item text-left active">Ở Đâu</a> -->
+                <a href="#danhmuc2" data-toggle="collapse" class="list-group-item text-left active">Ở đâu</a>
+                     <div class="list-group collapse" id="danhmuc2">
+                      <a href="../index.html" class="list-group-item text-left">Hồ Chí Minh</a>
+                      <a href="../index.html" class="list-group-item text-left">Hà Nội</a>
+                      <a href="../index.html" class="list-group-item text-left">Tỉnh Khác</a>
+                    </div>
+                <!-- <a href="#" class="list-group-item text-left active">Sưu tập</a> -->
+                <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Sưu tập</a>
+                     <div class="list-group collapse" id="danhmuc3">
+                      <a href="../index.html" class="list-group-item text-left">Món ăn ngon</a>
+                      <a href="../index.html" class="list-group-item text-left">Đứng đầu mùa</a>
+                      <a href="../index.html" class="list-group-item text-left">Khu vực đông</a>
+                    </div>
+                <!-- <a href="#" class="list-group-item text-left active">Bình luận</a> -->
+                <a href="#danhmuc4" data-toggle="collapse" class="list-group-item text-left active">Chia sẻ</a>
+                     <div class="list-group collapse" id="danhmuc4">
+                      <a href="../index.html" class="list-group-item text-left">Facebook</a>
+                      <a href="../index.html" class="list-group-item text-left">Twitter</a>
+                      <a href="../index.html" class="list-group-item text-left">Zalo</a>
+                    </div>
+             
+</div> 
+  <!-- ITEM 1 END -->
+
+<div class="label label-danger" style="background-color: firebrick;
+    margin: 15px 0 0 0px;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: lighter;">Yêu thích</div>
+
+
+  <!-- ITEM 2 START -->
+     <div class="thumbnail item-title-img item-fav-left">
+      
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im3.jpg" alt="">
+        <!-- <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div> -->
+    </div>
+
+
+      <div class="caption" style="width: 100%;">
+       <div class="title" style="text-align: center;"> <h3><a href="../html/chitiettin2.html"> The US Drinks - Nguyễn Duy</a></h3></div>
+                  
+      </div>
+    </div>
+   
+
+    <!-- ITEM 2 END -->
+    <!-- ITEM 3 START -->
+     <div class="thumbnail item-title-img item-fav-left">
+      
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im1.jpg" alt="">
+       <!--  <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div> -->
+    </div>
+
+
+      <div class="caption" style="width: 100%;">
+       <div class="title" style="text-align: center;"> <h3><a href="../html/chitiettin3.html"> Cơm Tấm Tám Tùng</a></h3></div>
+                  
+      </div>
+    </div>
+   
+
+    <!-- ITEM 3 END -->
+    <!-- ITEM 4 START -->
+     <div class="thumbnail item-title-img item-fav-left">
+      
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im2.jpg" alt="">
+       <!--  <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div> -->
+    </div>
+
+
+      <div class="caption" style="width: 100%;">
+       <div class="title" style="text-align: center;"> <h3><a href="../html/chitiettin4.html"> Sin Cafe - Võ Công Tồn
+
+</a></h3></div>
+                  
+      </div>
+    </div>
+   
+
+    <!-- ITEM 4 END -->
+ </div>
+
+
+ <!-- LEFT CONTAIN END-->
+
+ <!-- CENTER CONTAIN START-->
+ <div class="col-sm-8 ">
+   
+
+ 
+ <!-- ITEM ROW 1 IN CENTER START -->
+  <!-- <div class="row"> -->
+<!-- <blockquote>
+  <a href="../index.html">Trang Chủ</a>
+</blockquote>
+  <blockquote>
+  <p>Thông tin của : Kọp Milk Tea - Trà Sữa Túi Lọc, Ăn Vặt</p>
+
+</blockquote>
+
+
+  </div> -->
+<!-- <div class="row"> -->
+<!-- PICTURE START -->
+<!-- <div class="col-lg-5  col-md-7 img-thumbnail"> -->
+
+  <!-- <img src="../images/im4.jpg"> -->
+
+
+<!-- </div> -->
+<!-- PICTURE END -->
+<!-- DETAILS START -->
+<!-- <div class="col-lg-7 col-md-3" id="chitiettin">
+
+  <div class="title_chitiet"><h3> Kọp Milk Tea - Trà Sữa Túi Lọc, Ăn Vặt</h3></div>
+  <hr>
+  <div class="details_chitiet"><h4>Thông tin chi tiết :</h4>
+  <label>Đánh giá :</label>
+  <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div> -->
+<!--       </div>
+       <label class="">Địa điểm :</label>
+      <div class="">
+<span class=""> <a href="#" >Công Viên Trung Tâm,</a></span>
+<span class=""><a href="#">Long An,</a></span>
+<span class=""><a href="#">P.Tân An</a></span>
+    </div>
+    <br>
+     <label class="">Thời gian :</label>
+    <div class=" time_open ">
+      <p class=""><b> Đang mở cửa : </b>
+       06:00 PM - 10:30 PM | 0:00 - 0:00</p>
+
+    </div>
+    <label class="">Giá tiền :</label>
+<div class="price ">
+      
+      <p class=""> 8.000đ - 15.000đ </p> -->
+
+   <!--  </div>
+     <label class="">Số điện thoại:</label>
+<div class="price ">
+      
+      <p class=""> 012xxxxxxxxx </p>
+
+    </div>
+     <label class="">Hình thức :</label>
+<div class="price ">
+      
+      <p class=""> Vỉa hè </p>
+
+    </div>
+     <label class="">Ẩm thực :</label>
+<div class="price ">
+      
+      <p class=""> Dân tộc </p>
+
+    </div>
+  </div>
+  <hr>
+  <div class="datcho_chitiet"><h4>Đặt chỗ : </h4></div>
+  <form action="../html/giohang.html" class="form-horizontal"> -->
+  <!-- <form  class="form-group">
+
+    <label >Khu vực :</label>
+   <select class="form-control">
+     <option>Hồ Chí Minh</option>
+     <option>Hà Nội</option>
+     <option>...</option>
+
+   </select>
+  </form> -->
+<!-- <form  class="form-group">
+
+    <label for="name">Tên lấy chỗ :</label>
+    <input class="form-control" type="text" id="name">
+  </form>
+<br>
+  <form  class="form-group">
+
+    <label for="soluong">Số chỗ :</label>
+    <input class="form-control" type="number" id="soluong">
+  </form>
+  
+   <br>
+   <div class="">
+        <a href="../html/giohang.html" class="btn btn-danger" role="button">Đặt chỗ</a>
+         <a href="../html/giohang.html" class="btn btn-danger" role="button">Lưu</a>
+          <a href="../html/chitiettin1_admin.html" class="btn btn-danger" onclick="alert('Bạn phải là admin')" role="button">Admin</a>
+   </div>
+  
+  </form>
+</div> -->
+<!-- DETAIL END -->
+ <!-- ITEM 1  START-->
+   
+<!-- ITEM 1  END-->
+ <!-- </div> -->
+
+<!-- <hr> -->
+<!-- <div class="row">
+<div class="col-lg-2 col-md-2"></div>
+  <div class="col-lg-4 col-md-4 img-thumbnail" ><img style="  " src="../images/im4.jpg"></div>
+  <div class="col-lg-4 col-md-4 img-thumbnail "><img style="  " src="../images/im4.jpg"></div>
+  <div class="col-lg-2 col-md-2"></div>
+</div> -->
+<!-- <div class=" container-fluid">
+  <ul class="pagination">
+    <li class="active"><a href="../index.html">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">Trang kế</a></li>
+    <li><a href="#">Trang cuối</a></li>
+  </ul>
+
+</div> -->
+<hr style="margin-top: 12px;">
+<p style="text-align: center; font-size: x-large;
+    font-weight: bold;">Giỏ Hàng</p>
+    <hr>
+<div class="row">
+
+ <!-- ITEM 1  START-->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="thumbnail item-title-img">
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im4.jpg" alt="">
+        <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div>
+    </div>
+
+
+      <div class="caption">
+        <div class="title"><h3><a href="../html/chitiettin1.html"> Kọp Milk Tea - Trà Sữa Túi Lọc, Ăn Vặt</a></h3></div>
+        <div class="address"><p>Công viên Trung Tâm, TP. Tân An, Long An</p></div>
+        <div class="add">
+        <a href="../html/chitiettin1.html" class="btn btn-info" role="button">Thông tin</a>
+         <a href="#" class="btn btn-danger" onclick="confirm('Bạn có chắc muốn hủy đặt chỗ')" role="button">Hủy</a>
+
+         </div>
+         <!-- <hr> -->
+         <!-- <div class=""> -->
+
+<!-- 
+    <div><img class="col-sm-1 img-facebook-cmt" src="https://cdn0.iconfinder.com/data/icons/social-icons-10/128/694073-512x512.png"></div> -->
+    <!-- <div class="caption_bellow"><span class="user_cmt"> Yi Lu</span> Mỗi lần về quê là được mẹ dắt ra đây ăn vặt. Có đủ thứ trà sữa đồ ăn vặt luôn. Nào là </div> -->
+
+
+         <!-- </div> -->
+      </div>
+    </div>
+    </div>
+<!-- ITEM 1  END-->
+
+
+<!-- ITEM 1  START-->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="thumbnail item-title-img">
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im3.jpg" alt="">
+        <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div>
+    </div>
+
+
+      <div class="caption">
+       <div class="title"> <h3><a href="../html/chitiettin2.html"> The US Drinks - Nguyễn Duy</a></h3></div>
+        <div class="address"><p>55 Nguyễn Duy, P. 1, TP. Tân An, Long An</p></div>
+        <div class="add">
+        <a href="../html/chitiettin2.html" class="btn btn-info" role="button">Thông tin</a>
+         <a href="#" class="btn btn-danger" onclick="confirm('Bạn có chắc muốn hủy đặt chỗ')" role="button">Hủy</a>
+
+         </div>
+         <!-- <hr> -->
+         <!-- <div class=" "> -->
+
+<!-- 
+    <div><img class="col-sm-1 img-facebook-cmt" src="https://cdn0.iconfinder.com/data/icons/social-icons-10/128/694073-512x512.png"></div> -->
+    <!-- <div class="caption_bellow"><span class="user_cmt"> Trang Huỳnh </span>Thích nhất là uống matcha đá xay ở đây, không béo quá mà luôn nghe mùi trà  </div> -->
+
+
+         <!-- </div> -->
+      </div>
+    </div>
+    </div>
+<!-- ITEM 1  END-->
+
+<!-- ITEM 1  START-->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="thumbnail item-title-img">
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im1.jpg" alt="">
+        <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="../index.html" onclick="alert('đã chia sẻ thành công');">Nhấn Vào</a>
+        </div>
+    </div>
+
+
+      <div class="caption">
+        <div class="title"><h3><a href="../html/chitiettin3.html"> Cơm Tấm Tám Tùng</a></h3></div>
+        <div class="address"><p>Hai Bà Trưng, P. 1, TP. Tân An, Long An</p></div>
+        <div class="add">
+        <a href="../html/chitiettin3.html" class="btn btn-info" role="button">Thông tin</a>
+         <a href="#" class="btn btn-danger" onclick="confirm('Bạn có chắc muốn hủy đặt chỗ')" role="button">Hủy</a>
+
+         </div>
+         <!-- <hr> -->
+         <!-- <div class=" "> -->
+
+<!-- 
+    <div><img class="col-sm-1 img-facebook-cmt" src="https://cdn0.iconfinder.com/data/icons/social-icons-10/128/694073-512x512.png"></div> -->
+    <!-- <div class="caption_bellow"><span class="user_cmt">Yi Lu</span>  Mỗi lần về quê là mình lại ghé đây ăn, tiệm cơm mở từ sáng tới tối mà đông nhất khoảng từ  </div> -->
+
+
+         <!-- </div> -->
+      </div>
+    </div>
+    </div>
+<!-- ITEM 1  END-->
+    
+
+<!-- ITEM 1  START-->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="thumbnail item-title-img">
+      <!-- <img src="https://media.foody.vn/res/g9/89596/prof/s640x400/im4.jpg" alt="..."> -->
+
+    <div class="hovereffect">
+        <img class="img-responsive" src="../images/im2.jpg" alt="">
+        <div class="overlay">
+           <h2>Chia Sẻ</h2>
+           <a class="info" href="#">Nhấn Vào</a>
+        </div>
+    </div>
+
+
+      <div class="caption">
+        <div class="title"><h3><a href="../html/chitiettin4.html"> Sin Cafe - Võ Công Tồn</a></h3></div>
+        <div class="address"><p>5 Võ Công Tồn, TP. Tân An, Long An</p></div>
+        <div class="add">
+        <a href="../html/chitiettin4.html" class="btn btn-info" role="button">Thông tin</a>
+         <a href="#" class="btn btn-danger" onclick="confirm('Bạn có chắc muốn hủy đặt chỗ')" role="button">Hủy</a>
+
+         </div>
+         <!-- <hr> -->
+         <!-- <div class=" "> -->
+
+<!-- 
+    <div><img class="col-sm-1 img-facebook-cmt" src="https://cdn0.iconfinder.com/data/icons/social-icons-10/128/694073-512x512.png"></div> -->
+    <!-- <div class="caption_bellow"><span class="user_cmt">Cow Di</span> Cũng lâu lắm rồi mới trở lại đây nhưng chất lượng và cung cách phục vụ không có thay </div> -->
+
+
+         <!-- </div> -->
+      </div>
+    </div>
+    </div>
+<!-- ITEM 1  END-->
+</div>
+ </div>
+
+ <!-- CENTER CONTAIN END-->
+
+ <!-- RIGHT CONTAIN START-->
+ <div class="col-sm-2 sidenav">
+
+ <div class="list-group">
+            <a href="../index.html" class="list-group-item active">
+              Ăn uống
+            </a>
+            <a href="../index.html" class="list-group-item">Mới nhất </a>
+            <a href="../index.html" class="list-group-item">Top tuần</a>
+            <a href="../index.html" class="list-group-item">Gần tôi</a>
+            <a href="../html/luu.html" class="list-group-item">Đã lưu</a>
+          </div>
+  <div style="background-color: black; color: white;">
+   quảng cáo ở đây
+  </div>
+
+ </div>
+ <!-- RIGHT CONTAIN END-->
+
+
+</div>
+</div>
+
+<!-- FOOTER START -->
+<footer class="container-fluid text-center">
+<hr style="margin-top: 20px;">
+    <div class="container-fluid row">
+    <div class="col-sm-3">
+      <img src="../images/logo.gif" style="    height: 160px;
+    width: 212px;">
+
+    </div>
+      <div class="col-sm-2">
+        <div class="text-title">Khám phá</div>
+        <hr>
+        <ul>
+<li><a href="#">Ứng dụng Mobile</a></li>
+<li><a href="#">Mobile Web</a></li>
+<li><a href="#">Viết bình luận</a></li>
+<li><a href="#">Tạo bộ sưu tập</a></li>
+<li><a href="#">Kết nối bạn bè</a></li>
+<li><a href="#">Phần thưởng</a></li>
+<li><a href="#">Bảo mật thông tin</a></li>
+<li><a href="#">Quy định</a></li>
+</ul>
+      </div>
+      <div class="col-sm-2">
+        <div class="text-title">Công ty </div>
+        <hr>
+        <ul>
+<li><a href="#">Giới thiệu</a></li>
+<li><a href="#">Blogs</a></li>
+<li><a href="#">Trợ giúp</a></li>
+<li><a href="#">Việc làm</a></li>
+<li><a href="#">Nhà đầu tư</a></li>
+<li><a href="#">Góp ý</a></li>
+<li><a href="#">Regulation</a></li>
+<li><a href="#">Liên hệ</a></li>
+</ul>
+      </div>
+      <div class="col-sm-2">
+        <div class="text-title">Tham gia trên </div>
+        <hr>
+        <ul>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Instagram</a></li>
+<li><a href="#">Youtube</a></li>
+<li><a href="#">Google</a></li>               
+</ul>
+      </div>
+      <div class="col-sm-2">
+        <div class="text-title">Giấy phép </div>
+        <hr>
+        <ul>
+<li><a>ICP 85/GP-ICP-STTTT</a></li>
+<li><a>MXH 152/GXN-TTDT</a></li>
+<li><a>SGD TMĐT 111</a></li>
+</ul>
+      </div>
+
+
+    </div>
+
+  <hr>
+  <div style="background-color: black;">©2016 Food! Bản quyền thuộc về nhóm web 1 </div>
+
+</footer>
+<!-- FOOTER END -->
+
+</body></html>

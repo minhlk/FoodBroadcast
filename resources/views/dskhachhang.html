@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Hãy ăn theo cách của bạn</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="../css/bootstrap.css">
+        <!-- ICON CSSS -->
+    <link rel="stylesheet" href="../font/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom_css.css">
+
+    <style type="text/css">
+      
+
+    </style>
+    
+</head>
+
+
+
+<body>
+<!-- NAVIGATION BAR START -->
+<nav class="navbar navbar-inverse navbar-fixed-top ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-weight: bold; " href="../admin_index.html">Bảng Admin</a>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse " aria-expanded="false" style="height: 1.5015px;">
+          <ul class="nav navbar-nav ">
+            <!-- <li class="active"><a href="./index.html">Trang Chủ</a></li> -->
+           <!--  <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li>
+            <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li>
+            -->
+             <li class="">
+              <a  href="../admin_index.html">Danh sách sản phẩm
+              </a>
+            </li> 
+              <li class="">
+              <a  href="../html/dsdondat.html">Danh sách đơn đặt
+              </a>
+            </li> 
+               <li class="active">
+              <a  href="#">Danh sách khách hàng
+              </a>
+            </li> 
+            </li> 
+              <li class="">
+              <a  href="../html/themtin.html">Thêm sản phẩm
+              </a>
+            </li> 
+            <li class="">
+              <a  href="../html/thongke.html">Thống kê
+              </a>
+            </li> 
+
+            <!-- <li class="dropdown">
+              <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khác <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+               <li><a href="./html/lienhe.html">Liên Hệ</a></li>
+
+                <li><a href="./html/lienhe.html">Về Chúng Tôi</a></li>
+               
+                
+               
+              </ul>
+            </li> -->
+           
+
+             
+                     
+
+            
+          </ul>
+
+
+<ul class="nav navbar-nav" style="float: right;">
+            
+            <li class="timkiem">
+                <form action="./html/timkiem.html" class="navbar-form navbar-right">
+                <div class="input-group">
+                <input type="text" class="form-control" style="float: left; width: auto;">
+                <button  class="btn btn-danger" style="border-top: 1px solid red; float: left;"> Tìm kiếm</button>
+                </div>
+                </form>
+            </li>
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#search">Tìm nâng cao</a></li> -->
+            <!-- <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li> -->
+            <li><a href="./admin.html"  >Đăng xuất</a></li>
+</ul>        
+            
+          
+        </div>
+        <!--/.nav-collapse -->
+    
+
+
+
+
+
+      </div>
+    </nav>
+<!-- CENTER CONTAIN START -->
+<form action="#" class="form-inline ">
+
+<div class="container-fluid" style="margin-top: 150px;">
+
+<div>
+<select class="form-control">
+    <option>--Đối tượng--</option>
+              <option>Mã khách hàng</option>
+              <option>Tên</option>
+              <option>Mật khẩu</option>
+              <option>Số điện thoại</option>
+              <option>Địa chỉ</option>
+  </select>
+  <select class="form-control">
+    <option>--Sắp xếp--</option>
+    <option>Tăng dần</option>
+    <option>Giảm dần</option>
+  </select>
+  <input type="submit" class="btn btn-danger" value="Lọc" name="">
+</div>
+
+      <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <td><input type="checkbox" name="" class="checkbox" id="checkbox_head"></td>
+              <td>Mã khách hàng</td>
+              <td>Tên</td>
+              <td>Mật khẩu</td>
+              <td>Số điện thoại</td>
+              <td>Địa chỉ</td>
+              <!-- <td>Thời gian</td> -->
+              <!-- <td>Địa điểm</td> -->
+              <!-- <td>Hình thức</td> -->
+              <!-- <td>Ẩm thực</td> -->
+              <td>Chức năng</td>
+              <td><button onclick="confirm('Bạn có chắc muốn xóa ')" type="submit" name="" class="btn btn-danger">Xóa mục chọn</button></td>
+            </tr>
+
+
+          </thead>
+        <tbody>
+        <!-- ITEM 1 START -->
+          <tr>
+            <td><input type="checkbox" name=""></td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <!-- <td>3</td> -->
+            <!-- <td>2</td> -->
+            <!-- <td>3</td> -->
+            <!-- <td>2</td> -->
+            <td>
+              <form class="form-inline">
+                <form class="form-group">
+                  <!-- <a href="./html/chitiettin1_admin.html" class="btn btn-primary" >Sửa</a> -->
+                   <a href="" onclick="confirm('Bạn có chắc muốn xóa')" class="btn btn-danger" >Xóa</a>
+                </form>
+              </form>
+            </td>
+          </tr>
+          <!-- ITEM 1 END  -->
+          <!-- ITEM 2 START -->
+          <tr>
+            <td><input type="checkbox" name=""></td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <!-- <td>3</td> -->
+            <!-- <td>2</td> -->
+            <!-- <td>3</td> -->
+            <!-- <td>2</td> -->
+            <td>
+              <form class="form-inline">
+                <form class="form-group">
+                  <!-- <a href="./html/chitiettin1_admin.html" class="btn btn-primary" >Sửa</a> -->
+                   <a href="" onclick="confirm('Bạn có chắc muốn xóa')" class="btn btn-danger" >Xóa</a>
+                </form>
+              </form>
+            </td>
+          </tr>
+          <!-- ITEM 2 END -->
+        </tbody>
+      </table>
+
+</div>
+</form>
+ <!-- CENTER CONTAIN END -->
+
+
+
+
+</body></html>
