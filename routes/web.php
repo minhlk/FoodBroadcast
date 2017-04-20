@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/','homePageController@load');
 Route::get('/itemdetails', function() {
 
 	return view('itemdetails');
@@ -25,3 +26,14 @@ Route::get('/cart', function(){
 //for login logout
 Auth::routes();
 
+//upload image start 
+// Route::get('/test1',function(){
+// 	return view('hello');
+
+// });
+// Route::post('/test','uploadcontroller@uploadImage');
+//upload image end
+Route::get('database', function(){
+	$t = DB::table('monan') -> join('chitietmonan','monan.idMonAn','=','chitietmonan.idMonAn')-> join('khuvuc','khuvuc.idKhuVuc','=','chitietmonan.idKhuVuc')->get();
+	return $t;
+});

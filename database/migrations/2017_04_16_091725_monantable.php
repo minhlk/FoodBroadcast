@@ -15,13 +15,16 @@ class Monantable extends Migration
     {
         Schema::create('monan', function (Blueprint $table) {
             $table->increments('idMonAn');
+            $table->string('image');
             $table->string('ten');
             $table->integer('giaMin');
             $table->integer('giaMax');
-            $table->integer('idKhuVuc');
+            // $table->integer('idKhuVuc');
             $table->string('moTa')->nullable();
             $table->integer('soDienThoai');
-            $table->integer('tag')->nullable();
+            // $table->integer('idTag')->nullable();
+            $table->dateTime('thgianBatDau');
+            $table->dateTime('thgianKetThuc');
             $table->timestamps();
         });
     }

@@ -150,7 +150,7 @@
 <div class="row">
 
  <!-- ITEM 1  START-->
-   @include('layout.item')
+   @include('layout.itemdetails')
 
 <!-- ITEM 1  END-->
 </div>
