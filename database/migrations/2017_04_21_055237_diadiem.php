@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Monantable extends Migration
+class Diadiem extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,22 @@ class Monantable extends Migration
      */
     public function up()
     {
-        Schema::create('monan', function (Blueprint $table) {
-            $table->increments('idMonAn');
+        Schema::create('diadiem', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('idTP');
+            $table->integer('idKhuVuc');
             $table->string('image');
             $table->string('ten');
-            $table->integer('giaMin');
+            $table->integer('giaMin');          
             $table->integer('giaMax');
-            // $table->integer('idKhuVuc');
+            $table->string('diaChi')->nullable();
             $table->string('moTa')->nullable();
+            $table->string('trangWeb')->nullable();
             $table->integer('soDienThoai');
-            // $table->integer('idTag')->nullable();
-            $table->dateTime('thgianBatDau');
-            $table->dateTime('thgianKetThuc');
+            $table->integer('gioBatDau');
+            $table->integer('phutBatDau');
+            $table->integer('gioKetThuc');
+            $table->integer('phutKetThuc');
             $table->timestamps();
         });
     }
@@ -36,6 +40,6 @@ class Monantable extends Migration
      */
     public function down()
     {
-       Schema::drop('monan');
+       Schema::drop('diadiem');
     }
 }

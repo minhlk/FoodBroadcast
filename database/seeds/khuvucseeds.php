@@ -12,14 +12,13 @@ class khuvucseeds extends Seeder
     public function run()
     {
         DB::table('khuvuc')->insert([
-    		'idKhuVuc' => '1',
-    		'tenKhuVuc' => 'Hồ Chí Minh',
-    		'mieuTa' => 'Trung tâm việt nam',
+    		'idTP' => '1',
+    		'ten' => 'quận 1',
     		]);
         DB::table('khuvuc')->insert([
-            'idKhuVuc' => '2',
-            'tenKhuVuc' => 'Hà nội',
-            'mieuTa' => 'Thu đô việt nam',
+            'idTP' => '2',
+            'ten' => 'quận 2',
+            
             ]);
 
     }

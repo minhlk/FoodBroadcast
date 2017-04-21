@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\DB;
 class khuvuc extends Model
 {
     //
@@ -13,5 +13,9 @@ class khuvuc extends Model
 
 	    return $this -> hasMany('App\monanmodel','idMonAn','idKhuVuc');
 	}
+	public static function getKhuVuc(){
+		return DB::table('khuvuc') ->get();
+	}
+
 
 }
