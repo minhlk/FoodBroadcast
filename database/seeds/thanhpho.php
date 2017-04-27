@@ -13,15 +13,15 @@ class thanhpho extends Seeder
     {
         DB::table('thanhpho')->insert([
     		
-    		'ten' => 'Hồ Chí Minh',
+    		'tenTP' => 'Hồ Chí Minh',
     		]);
         DB::table('thanhpho')->insert([
     		
-    		'ten' => 'Hà nội',
+    		'tenTP' => 'Hà nội',
     		]);
 		DB::table('thanhpho')->insert([
     		
-    		'ten' => 'Hải phong',
+    		'tenTP' => 'Hải phong',
     		]);
     }
 }

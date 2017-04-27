@@ -18,7 +18,7 @@
 @include('layout.banner')
 <!-- BANNER END  -->
 <!-- <p>{{$keyword}}</p> -->
-{{$khuvuc}}
+
 <div id="body_contain" class="container-fluid text-center">
   <div class="container">
   	<i class="fa fa-search" aria-hidden="true" style="font-size:2em;"> Kết quả tìm kiếm cho </i>

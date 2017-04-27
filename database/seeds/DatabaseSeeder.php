@@ -11,8 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(monanseeds::class);
+        $this->call(thanhpho::class);
         $this->call(khuvucseeds::class);
-        $this->call(chitietmonanseeds::class);
+        $this->call(diadiem::class);
+        $this->call(hinhthuc::class);
+        $this->call(theloai::class);
     }
 }

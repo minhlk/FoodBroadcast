@@ -15,10 +15,7 @@
 //     return view('index');
 // });
 Route::get('/','homePageController@load');
-Route::get('/itemdetails', function() {
-
-	return view('itemdetails');
-});
+Route::get('/itemdetails','details@load');
 Route::get('/search',"searchcontroller@getQuery");
 Route::get('/cart', function(){
 	return view('cart');

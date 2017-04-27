@@ -14,7 +14,7 @@ class Diadiem extends Migration
     public function up()
     {
         Schema::create('diadiem', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->integer('idTP');
             $table->integer('idKhuVuc');
             $table->string('image');

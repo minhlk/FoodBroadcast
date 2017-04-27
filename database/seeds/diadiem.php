@@ -27,7 +27,22 @@ class diadiem extends Seeder
     		'gioKetThuc' => '19',
     		'phutKetThuc' => '0',
     		]);
-
+         DB::table('diadiem')->insert([
+            'idTP' => '2',
+            'idKhuVuc' => '2',
+            'image' => './uploads/im3.jpg',
+            'ten' => 'Caffe',
+            'giaMin' => '10000',
+            'giaMax' => '100000',
+            'diaChi' => 'unknown',
+            'moTa' => 'updating',
+            'trangWeb' => 'google.com',
+            'soDienThoai' => '01234543',
+            'gioBatDau' => '7',
+            'phutBatDau' => '30',
+            'gioKetThuc' => '19',
+            'phutKetThuc' => '0',
+            ]);
          
     }
 }

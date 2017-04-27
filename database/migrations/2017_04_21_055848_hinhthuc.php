@@ -14,9 +14,11 @@ class Hinhthuc extends Migration
     public function up()
     {
          Schema::create('hinhthuc', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('ten');
+            $table->increments('id')->unique();
+            $table->string('tenHT')->unique();
             $table->string('mota')->nullable();
+
+            
             $table->timestamps();
         });
     }

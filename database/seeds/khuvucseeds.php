@@ -13,11 +13,11 @@ class khuvucseeds extends Seeder
     {
         DB::table('khuvuc')->insert([
     		'idTP' => '1',
-    		'ten' => 'quận 1',
+    		'tenKV' => 'quận 1',
     		]);
         DB::table('khuvuc')->insert([
             'idTP' => '2',
-            'ten' => 'quận 2',
+            'tenKV' => 'quận 2',
             
             ]);
 

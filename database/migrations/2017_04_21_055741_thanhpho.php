@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Khuvuctable extends Migration
+class Thanhpho extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Khuvuctable extends Migration
      */
     public function up()
     {
-        Schema::create('khuvuc', function (Blueprint $table) {
-            $table->increasement('id')->unique();
-            $table->integer('idTP');
-            $table->string('ten');
+        Schema::create('thanhpho', function (Blueprint $table) {
+            $table->increments('id')->unique();
+            $table->string('tenTP')->unique();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class Khuvuctable extends Migration
      */
     public function down()
     {
-        Schema::drop('khuvuc');
+        Schema::drop('thanhpho');
     }
 }

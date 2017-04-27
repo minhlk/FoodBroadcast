@@ -11,10 +11,15 @@ class theloai extends Seeder
      */
     public function run()
     {
-       DB::table('thanhpho')->insert([
+       DB::table('theloai')->insert([
     		
-    		'idDiaDiem' => '1',
-    		'idHinhThuc' => '1',
+    		'id_diadiem' => '1',
+    		'id_hinhthuc' => '1',
     		]);
+        DB::table('theloai')->insert([
+            
+            'id_diadiem' => '1',
+            'id_hinhthuc' => '2',
+            ]);
     }
 }

@@ -12,15 +12,15 @@ class hinhthuc extends Seeder
     public function run()
     {
         DB::table('hinhthuc')->insert([
-    		'ten' => 'Sang trọng',
+    		'tenHT' => 'Sang trọng',
     		'mota' => 'rất sang trọng'
     		]);
         DB::table('hinhthuc')->insert([
-    		'ten' => 'Vỉa hè',
+    		'tenHT' => 'Vỉa hè',
     		'mota' => 'rất vỉa hè'
     		]);
         DB::table('hinhthuc')->insert([
-    		'ten' => 'Lề đường',
+    		'tenHT' => 'Lề đường',
     		'mota' => 'rất lề đường'
     		]);
         

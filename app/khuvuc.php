@@ -9,9 +9,9 @@ class khuvuc extends Model
     //
     protected $table = 'khuvuc';
 
-	public function monans(){
+	public function diadiem(){
 
-	    return $this -> hasMany('App\monanmodel','idMonAn','idKhuVuc');
+	    return $this -> hasMany('App\diadiem','id','id');
 	}
 	public static function getKhuVuc(){
 		return DB::table('khuvuc') ->get();

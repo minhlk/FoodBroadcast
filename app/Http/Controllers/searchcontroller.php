@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\khuvuc;
-use App\monanmodel;
+use App\diadiem;
 
 class searchcontroller extends Controller
 {
@@ -17,11 +17,11 @@ class searchcontroller extends Controller
     	 // tim kiem theo khu vuc
     	if($req -> has('idKhuVuc'))
     	 	return view('filter'
-    	 		,['keyword' => 'khuvuc' ,'khuvuc' =>khuvuc::getKhuVuc()
-    	 		,'monans' => monanmodel::findMonAn()->where('idKhuVuc',$req ->idKhuVuc)]);
+    	 		,['khuvuc' =>khuvuc::getKhuVuc()
+    	 		,'diadiems' => khuvuc::find($req -> idKhuVuc)-> diadiem]);
     	else {
     	 	$key = $req -> keyword;
-    	 	return view('search',['keyword' => $key ,'khuvuc' =>rightPaneController::get()]);
+    	 	return view('search',['keyword' => $key ,'diadiems' =>diadiem::where('ten','like', '%'.$key.'%') -> get(),'khuvuc' => khuvuc::getKhuVuc()]);
     	 	}
 
     } 

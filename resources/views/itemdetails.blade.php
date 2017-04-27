@@ -47,7 +47,7 @@
 <!-- PICTURE START -->
 <div class="col-lg-7  col-md-7 ">
 
-  <img src="./images/im3.jpg">
+  <img src="{{$diadiem-> image }}">
 
 
 </div>
@@ -55,7 +55,7 @@
 <!-- DETAILS START -->
 <div class="col-lg-5 col-md-5 img-thumbnail" style="text-align: left;" id="chitiettin">
 
-  <div class="title_chitiet"><h3> The US Drinks - Nguyễn Duy</h3></div>
+  <div class="title_chitiet"><h3> {{$diadiem->ten }} </h3></div>
   <hr>
   <div class="details_chitiet"><h4>Thông tin chi tiết :</h4>
   <i class="fa fa-comment-o" aria-hidden="true"></i>
@@ -67,37 +67,35 @@
       <i class="fa fa-location-arrow" aria-hidden="true"></i>
        <label class="">Địa điểm :</label>
       <div class="">
-<span class=""> <!-- <a href="#" > -->55 Nguyễn Duy,P. 1,<!-- </a> --></span>
-<span class=""><a href="#">Long An,</a></span>
-<span class=""><a href="#"> TP. Tân An</a></span>
+<span class=""><a href="/filter?idTP={{$diadiem -> idTP}}">{{$diadiem -> thanhpho -> ten}}</a></span>
+<span class=""><a href="/filter?idKhuVuc={{$diadiem -> idKhuVuc}}"> {{$diadiem -> khuvuc -> ten}}</a></span>
     </div>
     <br>
     <i class="fa fa-calendar" aria-hidden="true"></i>
      <label class="">Thời gian :</label>
     <div class=" time_open ">
       <p class=""><b> Đang mở cửa : </b>
-       03:00 PM - 10:00 PM | 0:00 - 0:00</p>
+       {{$diadiem->gioBatDau }}:{{$diadiem->phutBatDau}} - 
+       {{$diadiem->gioKetThuc }}:{{$diadiem->phutKetThuc}}</p>
 
     </div>
     <i class="fa fa-money" aria-hidden="true"></i>
     <label class="">Giá tiền :</label>
 <div class="price ">
       
-      <p class=""> 20.000đ - 30.000đ </p>
+      <p class=""> {{$diadiem-> giaMin }} vnđ- {{$diadiem->giaMax }} vnđ </p>
 
     </div>
     <i class="fa fa-phone" aria-hidden="true"></i>
      <label class="">Số điện thoại:</label>
 <div class="price ">
       
-      <p class=""> 012xxxxxxxxx </p>
+      <p class=""> {{$diadiem-> soDienThoai }} </p>
 
     </div>
      <label class="">Hình thức :</label>
 <div class="price ">
-      
-      <p class=""> Quán ăn </p>
-
+     {{var_dump($diadiem -> hinhthuc ->ten)}}
     </div>
      <label class="">Ẩm thực :</label>
 <div class="price ">
@@ -117,7 +115,7 @@
      <option>...</option>
 
    </select>
-  </form> -->
+  </form>
 <form  class="form-group">
 
  

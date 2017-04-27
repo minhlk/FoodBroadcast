@@ -11,7 +11,7 @@
                 <a href="#danhmuc1" data-toggle="collapse" class="list-group-item text-left active">Khu vực</a>
                      <div class="list-group collapse" id="danhmuc1">
                      @foreach ($khuvuc as $khu)
-                      <a href="./search?idKhuVuc={{$khu -> idKhuVuc}}" class="list-group-item text-left">{{$khu -> tenKhuVuc}}</a>
+                      <a href="./search?idKhuVuc={{$khu -> id}}" class="list-group-item text-left">{{$khu -> tenKV}}</a>
                       @endforeach
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Ở Đâu</a> -->

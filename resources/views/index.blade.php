@@ -31,7 +31,7 @@
 
  
 <!-- ITEM 1  START-->
-   @include('layout.item')
+   @include('layout.itemHomePage')
 <!-- ITEM 1  END-->
 
   <!-- </div> -->

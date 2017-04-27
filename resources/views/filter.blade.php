@@ -17,13 +17,11 @@
 <!-- BANNER START -->
 @include('layout.banner')
 <!-- BANNER END  -->
-<!-- <p>{{$keyword}}</p> -->
-{{$khuvuc}}
 <div id="body_contain" class="container-fluid text-center">
   <div class="container">
   	<i class="fa fa-search" aria-hidden="true" style="font-size:2em;"> Kết quả tìm kiếm cho </i>
   	<!-- <i class="fa fa-tags" aria-hidden="true"></i> -->
-  	<span class="label label-danger"  style="font-size:2em;" >{{$keyword}}</span>
+  	<span class="label label-danger"  style="font-size:2em;" >{{$diadiems[0] -> khuvuc -> tenKV}}</span>
   </div>
   <div class="row content">
   	
