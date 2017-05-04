@@ -17,9 +17,7 @@
 Route::get('/','homePageController@load');
 Route::get('/itemdetails','details@load');
 Route::get('/search',"searchcontroller@getQuery");
-Route::get('/cart', function(){
-	return view('cart');
-});
+Route::get('/cart', "cartcontroller@load");
 //for login logout
 Auth::routes();
 

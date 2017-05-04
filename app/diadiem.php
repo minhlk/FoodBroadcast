@@ -9,10 +9,10 @@ class diadiem extends Model
     protected $table = 'diadiem';
     public function thanhpho(){
 
-    	return $this -> hasOne('App\thanhpho','id','id');
+    	return $this -> hasOne('App\thanhpho','id','idTP');
     }
     public function khuvuc(){
-    	return $this -> hasOne('App\khuvuc','id','id');
+    	return $this -> hasOne('App\khuvuc','id','idKhuVuc');
     }
     // public function hinhthuc($id){
     // 	return DB::table('diadiem')-> join('theloai',$id,'=','idDiaDiem') -> join('hinhthuc','idHinhThuc','=','id');

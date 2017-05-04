@@ -4,12 +4,12 @@
         <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="col-item">
                 <div class="photo">
-                    <img src="{{$diadiem -> image}}" class="img-responsive" alt="a" />
+                    <img src="{{$diadiem['image']}}" class="img-responsive" alt="a" />
                 </div>
                 <div class="info">
                     <div class="row">
                         <div class="price">
-                            <h5>  {{$diadiem -> ten}} </h5>
+                            <h5>  {{$diadiem['ten']}} </h5>
                             <!-- <h5 class="price-text-color">$199.99</h5> -->
                         </div>
                        
@@ -19,8 +19,11 @@
                     <div class="row">
                         <div class="price .caption_bellow">
                             <p style="margin-left: 10px" >
-                            {{$diadiem-> thanhpho -> ten}}
-                            {{$diadiem -> khuvuc -> ten}}
+                            {{$diadiem-> thanhpho -> tenTP}}
+                            
+                            </p>
+                            <p style="margin-left: 10px" >
+                                {{$diadiem -> khuvuc -> tenKV}}
                             </p>
                         </div>
                        

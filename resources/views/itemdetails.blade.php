@@ -34,10 +34,10 @@
  <!-- ITEM ROW 1 IN CENTER START -->
   <div class="row">
 <blockquote>
-  <a href="./index.html">Trang Chủ</a>
+  <a href="./">Trang Chủ</a>
 </blockquote>
   <blockquote>
-  <p>Thông tin của : The US Drinks - Nguyễn Duy</p>
+  <p>Thông tin của : {{$diadiem -> ten}}</p>
 
 </blockquote>
 
@@ -95,14 +95,14 @@
     </div>
      <label class="">Hình thức :</label>
 <div class="price ">
-     {{var_dump($diadiem -> hinhthuc ->ten)}}
+###
     </div>
-     <label class="">Ẩm thực :</label>
+    <!--  <label class="">Ẩm thực :</label>
 <div class="price ">
       
       <p class=""> Nam </p>
 
-    </div>
+    </div> -->
   </div>
 
 <form action="../html/giohang.html" class="form-horizontal">
@@ -133,13 +133,13 @@
 <hr style="margin-top: 12px;">
 
 
+ <!-- RIGHT CONTAIN START-->
+ @include('layout.leftcontain')
+ <!-- RIGHT CONTAIN END-->
  </div>
 
  <!-- CENTER CONTAIN END-->
 
- <!-- RIGHT CONTAIN START-->
- @include('layout.rightcontain')
- <!-- RIGHT CONTAIN END-->
 
 
 </div>

@@ -31,38 +31,23 @@
 
  
 <!-- ITEM 1  START-->
-   @include('layout.item')
+   {{--@include('layout.item')--}}
 <!-- ITEM 1  END-->
 
   <!-- </div> -->
 
  <!-- RIGHT CONTAIN START-->
- @include('layout.rightcontain')
+
+  @include('layout.leftcontain') 
  <!-- RIGHT CONTAIN END-->
 
  </div>
-<!-- PAGENITION START -->
-<div class=" container-fluid">
-  <ul class="pagination">
-    <li class="active"><a href="./index.html">1</a></li>
-    <li><a href="./index.html">2</a></li>
-    <li><a href="./index.html">3</a></li>
-    <li><a href="./index.html">4</a></li>
-    <li><a href="./index.html">5</a></li>
-    <li><a href="./index.html">6</a></li>
-    <li><a href="./index.html">7</a></li>
-    <li><a href="./index.html">Trang kế</a></li>
-    <li><a href="./index.html">Trang cuối</a></li>
-  </ul>
 
-</div>
-<!-- PAGENITION END -->
 
  <!-- CENTER CONTAIN END-->
 
 
 
-</div>
 </div>
 <!-- FOOTER START -->
 @include('layout.footer')

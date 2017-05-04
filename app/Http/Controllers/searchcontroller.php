@@ -18,7 +18,7 @@ class searchcontroller extends Controller
     	if($req -> has('idKhuVuc'))
     	 	return view('filter'
     	 		,['khuvuc' =>khuvuc::getKhuVuc()
-    	 		,'diadiems' => khuvuc::find($req -> idKhuVuc)-> diadiem]);
+    	 		,'diadiems' => khuvuc::find(1)-> diadiem]);
     	else {
     	 	$key = $req -> keyword;
     	 	return view('search',['keyword' => $key ,'diadiems' =>diadiem::where('ten','like', '%'.$key.'%') -> get(),'khuvuc' => khuvuc::getKhuVuc()]);

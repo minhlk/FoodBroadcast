@@ -13,7 +13,7 @@ class homePageController extends Controller
     	// $monAns = DB::table('monan') -> join('chitietmonan','monan.idMonAn','=','chitietmonan.idMonAn')-> join('khuvuc','khuvuc.idKhuVuc','=','chitietmonan.idKhuVuc')->get();
 
     	$diaDiem = diadiem :: all() ;
-    	return view('index',['diadiems' => $diaDiem]);
+    	return view('index',['diadiems' => $diaDiem , 'khuvuc' => rightPaneController::get()]);
 
     }
 }

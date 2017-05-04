@@ -1,11 +1,11 @@
 
 <div class="container col-xs-9 col-sm-9 col-md-9" style="margin-top:50px;">
     <div class="row">
-        @foreach ($diadiems as $diadiem)
+         @foreach ($diadiems as $diadiem) 
         <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="col-item">
                 <div class="photo">
-                   <img src="{{$diadiem -> image}}"/>
+                   <img src="{{$diadiem['image']}}"/>
                 </div>
                 <div class="info">
                     <div class="row">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        @endforeach
+         @endforeach
     </div>
 
 </div>
