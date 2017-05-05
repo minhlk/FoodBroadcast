@@ -15,11 +15,11 @@
                       @endforeach
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Ở Đâu</a> -->
-                <a href="#danhmuc2" data-toggle="collapse" class="list-group-item text-left active">Ở đâu</a>
+                <a href="#danhmuc2" data-toggle="collapse" class="list-group-item text-left active">Thành phố</a>
                      <div class="list-group collapse" id="danhmuc2">
-                      <a href="./index.html" class="list-group-item text-left">Hồ Chí Minh</a>
-                      <a href="./index.html" class="list-group-item text-left">Hà Nội</a>
-                      <a href="./index.html" class="list-group-item text-left">Tỉnh Khác</a>
+                      @foreach ($thanhpho as $thanh)
+                      <a href="./search?idTP={{$thanh -> id}}" class="list-group-item text-left">{{$thanh -> tenTP}}</a>
+                      @endforeach
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Sưu tập</a> -->
                 <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Sưu tập</a>

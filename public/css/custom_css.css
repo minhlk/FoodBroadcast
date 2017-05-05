@@ -398,11 +398,12 @@ box-shadow: 2px 1px 9px 1px rgba(194,35,35,0.54);
    /* width: 100%;
     float: left;
     margin-top: 5px;*/
-        width: 100%;
+    width: 100%;
     float: none;
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
+    text-align: center;
 }
 
 .col-item .price h5

@@ -20,7 +20,7 @@ Route::get('/search',"searchcontroller@getQuery");
 Route::get('/cart', "cartcontroller@load");
 //for login logout
 Auth::routes();
-
+Route::get('test','testcontroller@test');
 //upload image start 
 // Route::get('/test1',function(){
 // 	return view('hello');

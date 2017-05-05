@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\diadiem;
+use App\thanhpho;
 class homePageController extends Controller
 {
     //
@@ -13,7 +14,7 @@ class homePageController extends Controller
     	// $monAns = DB::table('monan') -> join('chitietmonan','monan.idMonAn','=','chitietmonan.idMonAn')-> join('khuvuc','khuvuc.idKhuVuc','=','chitietmonan.idKhuVuc')->get();
 
     	$diaDiem = diadiem :: all() ;
-    	return view('index',['diadiems' => $diaDiem , 'khuvuc' => rightPaneController::get()]);
+    	return view('index',['diadiems' => $diaDiem , 'khuvuc' => rightPaneController::get(), 'thanhpho' => thanhpho::all()]);
 
     }
 }

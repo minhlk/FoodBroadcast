@@ -8,7 +8,7 @@
                 </div>
                 <div class="info">
                     <div class="row">
-                        <div class="price">
+                        <div class="price" >
                             <h5>  {{$diadiem['ten']}} </h5>
                             <!-- <h5 class="price-text-color">$199.99</h5> -->
                         </div>
