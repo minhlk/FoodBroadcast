@@ -17,7 +17,11 @@
 Route::get('/','homePageController@load');
 Route::get('/itemdetails','details@load');
 Route::get('/search',"searchcontroller@getQuery");
-Route::get('/cart', "cartcontroller@load");
+Route::get('/cart', ["as" => "cart", "uses" => "cartcontroller@load"]);
+Route::get('/cart/id={id}','cartcontroller@addToCart');
+Route::get('/cart/removeid={id}','cartcontroller@removeFromCart');
+Route::get('/cart/save/','cartcontroller@saveToDB');
+Route::get('/cart/deleteid={id}','cartcontroller@removefromDB');
 //for login logout
 Auth::routes();
 Route::get('test','testcontroller@test');

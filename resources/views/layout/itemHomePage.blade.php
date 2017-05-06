@@ -30,7 +30,7 @@
                     </div>
                     <div class="separator clear-left">
                         <p class="btn-add">
-                            <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Vào giỏ</a></p>
+                            <i class="fa fa-shopping-cart"></i><a href="{{url('/cart/id='.$diadiem -> id)}}" class="hidden-sm">Lưu</a></p>
                         <p class="btn-details">
                             <i class="fa fa-list"></i><a href="./itemdetails?id={{$diadiem -> id}}" class="hidden-sm">Chi tiết</a></p>
                     </div>
