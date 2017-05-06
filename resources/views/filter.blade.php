@@ -21,7 +21,12 @@
   <div class="container">
   	<i class="fa fa-search" aria-hidden="true" style="font-size:2em;"> Kết quả tìm kiếm cho </i>
   	<!-- <i class="fa fa-tags" aria-hidden="true"></i> -->
-  	<span class="label label-danger"  style="font-size:2em;" >{{$diadiems[0] -> khuvuc -> tenKV}}</span>
+    @if(isset($kv))
+  	<span class="label label-danger"  style="font-size:2em;" >{{$kv -> tenKV}}</span>
+    @elseif(isset($tp))
+    <span class="label label-danger"  style="font-size:2em;" >{{$tp -> tenTP}}</span>
+
+    @endif
   </div>
   <div class="row content">
   	

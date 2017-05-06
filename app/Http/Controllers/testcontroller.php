@@ -7,6 +7,9 @@ use App\diadiem;
 use App\khuvuc;
 use App\thanhpho;
 use App\giohang;
+use App\theloai;
+use App\hinhthuc;
+
 
 use Cart;
 class testcontroller extends Controller
@@ -39,10 +42,10 @@ class testcontroller extends Controller
 
 
     	
-    		$giohang = giohang::where([
-    			['idUser','=',1],
-    			['idDiaDiem','=',2]
-    			]) -> first();
+    		// $giohang = giohang::where([
+    		// 	['idUser','=',1],
+    		// 	['idDiaDiem','=',2]
+    		// 	]) -> first();
     		
     	// foreach ($giohang as $item) {
     	// 	echo $item -> idUser;
@@ -52,8 +55,17 @@ class testcontroller extends Controller
     	// 	echo "\n";
     	// }
 
-		echo $giohang -> idUser;
-		echo $giohang -> idDiaDiem;
+		// echo $giohang -> idUser;
+		// echo $giohang -> idDiaDiem;
+
+    	// print_r(theloai::all());
+    	// echo theloai::all();
+    	$theloais = theloai::where('id_diadiem','=','1') ->get() ;
+    	foreach ($theloais as $items) {
+    		echo "\n".$items -> diadiem -> ten;
+    		echo "\n".$items -> hinhthuc -> tenHT;
+    	}
+
 
     }
 }

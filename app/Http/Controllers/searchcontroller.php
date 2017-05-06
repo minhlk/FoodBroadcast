@@ -15,13 +15,35 @@ class searchcontroller extends Controller
    	 
 	// return "<p>".Input::get("keyword")."</p>";
     	 // tim kiem theo khu vuc
-    	if($req -> has('idKhuVuc'))
-    	 	return view('filter'
-    	 		,['khuvuc' =>khuvuc::getKhuVuc()
-    	 		,'diadiems' => diadiem::where('idKhuVuc','=',$req -> idKhuVuc) -> get(), 'thanhpho' => thanhpho::all()]);
+    	if($req -> has('idKhuVuc') )
+    	 	return view('filter',
+    	 		['kv' =>khuvuc::where('id',$req -> idKhuVuc)->first()
+                ,'diadiems' => diadiem::where('idKhuVuc','=',$req -> idKhuVuc) -> get()
+                ,'khuvuc' =>khuvuc::all()
+                , 'thanhpho' => thanhpho::all()
+                ]);
+         elseif ($req -> has('idTP')) {
+            return view('filter'
+                ,['tp' =>thanhpho::where('id',$req -> idTP)->first()
+                ,'diadiems' => diadiem::where('idTP','=',$req -> idTP) -> get()
+                ,'khuvuc' =>khuvuc::all()
+                ,'thanhpho' => thanhpho::all()]);
+         }
+         // elseif ($req -> has('idHT')) {
+         //    return view('filter'
+         //        ,['ht' =>hinhthuc::where('id',$req -> idHT)->first()
+         //        ,'diadiems' => diadiem::where('idTP','=',$req -> idHT) -> get()
+         //        ,'khuvuc' =>khuvuc::all()
+         //        ,'thanhpho' => thanhpho::all()]);
+         // }
     	else {
     	 	$key = $req -> keyword;
-    	 	return view('search',['keyword' => $key ,'diadiems' =>diadiem::where('ten','like', '%'.$key.'%') -> get(),'khuvuc' => khuvuc::getKhuVuc(), 'thanhpho' => thanhpho::all()]);
+    	 	return view('search',[
+                'keyword' => $key 
+                ,'diadiems' => diadiem::where('ten','like', '%'.$key.'%') -> get()
+                ,'khuvuc' => khuvuc::getKhuVuc()
+                , 'thanhpho' => thanhpho::all()
+                ]);
     	 	}
 
     } 

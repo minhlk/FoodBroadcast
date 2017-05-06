@@ -22,11 +22,12 @@
                       @endforeach
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Sưu tập</a> -->
-                <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Sưu tập</a>
+                <a href="#danhmuc3" data-toggle="collapse" class="list-group-item text-left active">Hình thức</a>
                      <div class="list-group collapse" id="danhmuc3">
-                      <a href="./index.html" class="list-group-item text-left">Món ăn ngon</a>
-                      <a href="./index.html" class="list-group-item text-left">Đứng đầu mùa</a>
-                      <a href="./index.html" class="list-group-item text-left">Khu vực đông</a>
+                      @foreach($hinhthuc as $item)
+                      <a href="{{url('/search?idHT='.$item -> id)}}" class="list-group-item text-left">{{$item -> tenHT}}</a>
+                      @endforeach
+
                     </div>
                 <!-- <a href="#" class="list-group-item text-left active">Bình luận</a> -->
                 <a href="#danhmuc4" data-toggle="collapse" class="list-group-item text-left active">Chia sẻ</a>

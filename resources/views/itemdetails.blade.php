@@ -67,8 +67,8 @@
       <i class="fa fa-location-arrow" aria-hidden="true"></i>
        <label class="">Địa điểm :</label>
       <div class="">
-<span class=""><a href="/filter?idTP={{$diadiem -> idTP}}">{{$diadiem -> thanhpho -> ten}}</a></span>
-<span class=""><a href="/filter?idKhuVuc={{$diadiem -> idKhuVuc}}"> {{$diadiem -> khuvuc -> ten}}</a></span>
+<a href="{{url('/search?idTP='.$diadiem -> idTP)}}" class="label label-danger">{{$diadiem -> thanhpho -> tenTP}}</a>
+<a href="{{url('/search?idKhuVuc='.$diadiem -> idKhuVuc)}}" class="label label-danger"> {{$diadiem -> khuvuc -> tenKV}}</a>
     </div>
     <br>
     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -83,19 +83,22 @@
     <label class="">Giá tiền :</label>
 <div class="price ">
       
-      <p class=""> {{$diadiem-> giaMin }} vnđ- {{$diadiem->giaMax }} vnđ </p>
+      <p class=""> {{number_format($diadiem-> giaMin) }} vnđ- {{number_format($diadiem->giaMax) }} vnđ </p>
 
     </div>
     <i class="fa fa-phone" aria-hidden="true"></i>
      <label class="">Số điện thoại:</label>
 <div class="price ">
       
-      <p class=""> {{$diadiem-> soDienThoai }} </p>
+      <p class=""> {{number_format($diadiem-> soDienThoai),2 }} </p>
 
     </div>
      <label class="">Hình thức :</label>
 <div class="price ">
-###
+@foreach($theloai as $item)
+
+<a class="label label-danger" href="">{{ $item -> hinhthuc -> tenHT}}</a>
+@endforeach
     </div>
     <!--  <label class="">Ẩm thực :</label>
 <div class="price ">
