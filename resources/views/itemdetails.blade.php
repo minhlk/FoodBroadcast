@@ -32,17 +32,16 @@
 
  
  <!-- ITEM ROW 1 IN CENTER START -->
-  <div class="row">
-<blockquote>
-  <a href="./">Trang Chủ</a>
-</blockquote>
-  <blockquote>
-  <p>Thông tin của : {{$diadiem -> ten}}</p>
 
-</blockquote>
+<ol class="breadcrumb" style="text-align: left; background-color: firebrick;">
+  <li><a href="./" style="color: white;font-size: 20px;">Trang Chủ</a></li>
+  <li><a class="active" style="color: white;">Thông tin của : {{$diadiem -> ten}}</a></li>
+
+</ol>
 
 
-  </div>
+
+  </ol>
 <div class="row">
 <!-- PICTURE START -->
 <div class="col-lg-7  col-md-7 ">
@@ -59,11 +58,12 @@
   <hr>
   <div class="details_chitiet"><h4>Thông tin chi tiết :</h4>
   <i class="fa fa-comment-o" aria-hidden="true"></i>
-  <label>Đánh giá :</label>
-  <div class="progress">
+  <label>Mô tả:</label>
+  <p>{{$diadiem -> moTa}}</p>
+  <!-- <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
-      </div>
+      </div> -->
       <i class="fa fa-location-arrow" aria-hidden="true"></i>
        <label class="">Địa điểm :</label>
       <div class="">

@@ -25,7 +25,8 @@
   	<span class="label label-danger"  style="font-size:2em;" >{{$kv -> tenKV}}</span>
     @elseif(isset($tp))
     <span class="label label-danger"  style="font-size:2em;" >{{$tp -> tenTP}}</span>
-
+    @elseif(isset($ht))
+    <span class="label label-danger"  style="font-size:2em;" >{{$ht -> tenHT}}</span>
     @endif
   </div>
   <div class="row content">

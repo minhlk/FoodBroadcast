@@ -56,9 +56,9 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </form>
@@ -100,28 +100,29 @@
                                         <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa" name="keyword">
                                       </div>
                                       <div class="form-group">
-                                        <label for="price">Giá </label>
+                                        <label for="khuvuc">Khu vực </label>
                                         <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
-                                        <select class="form-control" id="price">
-                                          <option> 1</option>
-                                           <option> 1</option>
-                                            <option> 1</option>
-                                             <option> 1</option>
+                                        <select class="form-control" id="khuvuc">
+                                        @foreach ($khuvuc as $khu)
+                                        <option id="idKhuVuc={{$khu -> id}}">{{$khu -> tenKV}}</option>
+                                        @endforeach
                                         </select>
                                       </div>
                                       <div class="form-group">
-                                        <label for="place">Khu vực</label>
-                                        <select class="form-control" id="place">
-                                            <option> hcm</option>
-                                            <option>hà nội</option>
+                                        <label for="thanhpho">Thành phố</label>
+                                        <select class="form-control" id="thanhpho">
+                                            @foreach ($thanhpho as $thanh)
+                                          <option id="idTP={{$thanh -> id}}" >{{$thanh -> tenTP}}</option>
+                                          @endforeach
                                         </select>
 
                                       </div>
                                        <div class="form-group">
-                                        <label for="like">Lượt yêu thích</label>
-                                        <select class="form-control" id="like">
-                                            <option> dưới 100</option>
-                                            <option>trên 1000</option>
+                                        <label for="hinhthuc">Hình thức</label>
+                                        <select class="form-control" id="hinhthuc">
+                                            @foreach($hinhthuc as $item)
+                      <option id="idHT={{$item -> id}}">{{$item -> tenHT}}</option>
+                      @endforeach
                                         </select>
 
                                       </div>

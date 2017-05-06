@@ -60,7 +60,12 @@ class testcontroller extends Controller
 
     	// print_r(theloai::all());
     	// echo theloai::all();
-    	$theloais = theloai::where('id_diadiem','=','1') ->get() ;
+    	// $theloais = theloai::where('id_diadiem','=','1') ->get() ;
+    	// foreach ($theloais as $items) {
+    	// 	echo "\n".$items -> diadiem -> ten;
+    	// 	echo "\n".$items -> hinhthuc -> tenHT;
+    	// }
+    	$theloais = theloai::where('id_hinhthuc','=','2') ->get() ;
     	foreach ($theloais as $items) {
     		echo "\n".$items -> diadiem -> ten;
     		echo "\n".$items -> hinhthuc -> tenHT;

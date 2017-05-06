@@ -17,7 +17,9 @@ class Theloai extends Migration
             $table->integer('id_diadiem')->unsigned(); 
             $table->integer('id_hinhthuc')->unsigned();
             $table->timestamps();
+
         });
+         DB::statement("ALTER TABLE theloai ADD UNIQUE no_duplicate_diadiem_hinhthuc (id_diadiem, id_hinhthuc)");
     }
 
     /**

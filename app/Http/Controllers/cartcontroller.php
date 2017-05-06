@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\diadiem;
 use App\thanhpho;
 use App\giohang;
+use App\hinhthuc;
 use Cart,Auth;
 class cartcontroller extends Controller
 {
@@ -13,16 +14,17 @@ class cartcontroller extends Controller
     public function load(Request $req){
     		$khuvuc = rightPaneController::get();
     		$thanhpho = thanhpho::all();
+            $hinhthuc = hinhthuc::all();
     		$cart = Cart::content();
     		if (Auth::check()) {
     		$giohang = giohang::where('idUser','=',$req -> user() -> id) -> get();
     		return view('cart',
-    		compact('khuvuc','thanhpho','cart','giohang')
+    		compact('khuvuc','thanhpho','cart','giohang','hinhthuc')
     		);
     	}
     		else{
 	    			return view('cart',
-	    		compact('khuvuc','thanhpho','cart')
+	    		compact('khuvuc','thanhpho','cart','hinhthuc')
 	    		);
 		}
     }
