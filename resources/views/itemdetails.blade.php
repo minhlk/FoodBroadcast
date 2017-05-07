@@ -97,7 +97,7 @@
 <div class="price ">
 @foreach($theloai as $item)
 
-<a class="label label-danger" href="">{{ $item -> hinhthuc -> tenHT}}</a>
+<a class="label label-danger" href="{{url('/search?idHT='.$item -> id_hinhthuc)}}">{{ $item -> hinhthuc -> tenHT}}</a>
 @endforeach
     </div>
     <!--  <label class="">Ẩm thực :</label>

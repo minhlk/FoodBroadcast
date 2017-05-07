@@ -94,45 +94,42 @@
           <h4 class="modal-title">Tìm kiếm nâng cao</h4>
         </div>
         <div class="modal-body">
-                                 <form action="./search" method="get"  class="form-horizontal" target="_blank">
-                                      <div class="form-group">
-                                        <label for="keyword">Từ khóa</label>
-                                        <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa" name="keyword">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="khuvuc">Khu vực </label>
-                                        <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
-                                        <select class="form-control" id="khuvuc">
-                                        @foreach ($khuvuc as $khu)
-                                        <option id="idKhuVuc={{$khu -> id}}">{{$khu -> tenKV}}</option>
-                                        @endforeach
-                                        </select>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="thanhpho">Thành phố</label>
-                                        <select class="form-control" id="thanhpho">
-                                            @foreach ($thanhpho as $thanh)
-                                          <option id="idTP={{$thanh -> id}}" >{{$thanh -> tenTP}}</option>
-                                          @endforeach
-                                        </select>
-
-                                      </div>
-                                       <div class="form-group">
-                                        <label for="hinhthuc">Hình thức</label>
-                                        <select class="form-control" id="hinhthuc">
-                                            @foreach($hinhthuc as $item)
-                      <option id="idHT={{$item -> id}}">{{$item -> tenHT}}</option>
-                      @endforeach
-                                        </select>
-
-                                      </div>
-                                     
-
-                                     
-
-                                     <br>
-                                      <button type="submit" class="btn btn-danger">Tìm kiếm</button>
-                                </form>
+           <form action="./search" method="get"  class="form-horizontal" target="_blank">
+                <div class="form-group">
+                  <label for="keyword">Từ khóa</label>
+                  <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa" name="keyword">
+                </div>
+                <div class="form-group">
+                  <label for="khuvuc">Khu vực </label>
+                  <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
+                  <select class="form-control" id="khuvuc" name="idKhuVuc">
+                  <option selected value>-- Chọn --</option>
+                  @foreach ($khuvuc as $khu)
+                  <option value="{{$khu -> id}}">{{$khu -> tenKV}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="thanhpho">Thành phố</label>
+                  <select class="form-control" id="thanhpho" name="idTP">
+                  <option selected value>-- Chọn --</option>
+                  @foreach ($thanhpho as $thanh)
+                  <option value="{{$thanh -> id}}" >{{$thanh -> tenTP}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="hinhthuc">Hình thức</label>
+                  <select class="form-control" id="hinhthuc" name="idHT">
+                  <option selected value>-- Chọn --</option>
+                  @foreach($hinhthuc as $item)
+                  <option value="{{$item -> id}}">{{$item -> tenHT}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-danger">Tìm kiếm</button>
+            </form>
 
 
 <!-- 

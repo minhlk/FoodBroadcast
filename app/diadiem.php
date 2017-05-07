@@ -14,15 +14,11 @@ class diadiem extends Model
     public function khuvuc(){
     	return $this -> hasOne('App\khuvuc','id','idKhuVuc');
     }
-    // public function theloai(){
-    //     return $this -> hasMany('App\theloai','id',)
-
-    // }
     // public function hinhthuc($id){
     // 	return DB::table('diadiem')-> join('theloai',$id,'=','idDiaDiem') -> join('hinhthuc','idHinhThuc','=','id');
     // }
-    public function hinhthuc(){
-    		return $this -> belongsToMany('App\hinhthuc');
+    public function theloai(){
+    		return $this -> hasMany('App\theloai','id_diadiem','id');
     }
 
     public function khuvucs($idKhuVuc){

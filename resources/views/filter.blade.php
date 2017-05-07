@@ -23,9 +23,11 @@
   	<!-- <i class="fa fa-tags" aria-hidden="true"></i> -->
     @if(isset($kv))
   	<span class="label label-danger"  style="font-size:2em;" >{{$kv -> tenKV}}</span>
-    @elseif(isset($tp))
+    @endif
+    @if(isset($tp))
     <span class="label label-danger"  style="font-size:2em;" >{{$tp -> tenTP}}</span>
-    @elseif(isset($ht))
+    @endif
+    @if(isset($ht))
     <span class="label label-danger"  style="font-size:2em;" >{{$ht -> tenHT}}</span>
     @endif
   </div>

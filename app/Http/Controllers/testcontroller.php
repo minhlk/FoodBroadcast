@@ -65,12 +65,32 @@ class testcontroller extends Controller
     	// 	echo "\n".$items -> diadiem -> ten;
     	// 	echo "\n".$items -> hinhthuc -> tenHT;
     	// }
-    	$theloais = theloai::where('id_hinhthuc','=','2') ->get() ;
-    	foreach ($theloais as $items) {
-    		echo "\n".$items -> diadiem -> ten;
-    		echo "\n".$items -> hinhthuc -> tenHT;
-    	}
+    	// $theloais = theloai::where('id_hinhthuc','=','2') ->get() ;
+    	// foreach ($theloais as $items) {
+    	// 	echo "\n".$items -> diadiem -> ten;
+    	// 	echo "\n".$items -> hinhthuc -> tenHT;
+    	// }
+		 // $theloais = theloai::where('id_hinhthuc','=','2') ->get() ;
+		 //    	foreach ($theloais as $items) {
+		 //    		echo "\n".$items -> diadiem -> ten;
+		 //    		echo "\n".$items -> hinhthuc -> tenHT;
+		 //    	}
+		$diadiems =	diadiem::where([
+				 ['ten','like', '%%']
+				,['idTP','=','1']
+				,['idKhuVuc','=','1']
+				]) -> get();
 
+		foreach ($diadiems as $item) {
+			// echo $item ."\n";
+			foreach ($item -> theloai -> where('id_hinhthuc','=','2') as $i) {
+				echo $i -> id_hinhthuc;
+				echo $i -> diadiem -> image;
+				echo "\n";
+			}
+			echo "\n";
+			echo "\n";
+		}
 
     }
 }
