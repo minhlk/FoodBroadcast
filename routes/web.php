@@ -22,6 +22,7 @@ Route::get('/cart/id={id}','cartcontroller@addToCart');
 Route::get('/cart/removeid={id}','cartcontroller@removeFromCart');
 Route::get('/cart/save/','cartcontroller@saveToDB');
 Route::get('/cart/deleteid={id}','cartcontroller@removefromDB');
+Route::get('/lienhe', 'lienhe@load');
 //for login logout
 Auth::routes();
 Route::get('test','testcontroller@test');

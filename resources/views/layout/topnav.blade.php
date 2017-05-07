@@ -31,9 +31,9 @@
             <li class="dropdown">
               <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khác <span class="caret"></span></a>
               <ul class="dropdown-menu">
-               <li><a href="./html/lienhe.html">Liên Hệ</a></li>
+               <li><a href="./lienhe">Liên Hệ</a></li>
 
-                <li><a href="./html/lienhe.html">Về Chúng Tôi</a></li>
+                <li><a href="./lienhe">Về Chúng Tôi</a></li>
                
                 
                

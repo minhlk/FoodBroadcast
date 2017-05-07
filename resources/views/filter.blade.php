@@ -54,20 +54,42 @@
 
  </div>
 <!-- PAGENITION START -->
-<div class=" container-fluid">
-  <ul class="pagination">
-    <li class="active"><a href="./index.html">1</a></li>
-    <li><a href="./index.html">2</a></li>
-    <li><a href="./index.html">3</a></li>
-    <li><a href="./index.html">4</a></li>
-    <li><a href="./index.html">5</a></li>
-    <li><a href="./index.html">6</a></li>
-    <li><a href="./index.html">7</a></li>
-    <li><a href="./index.html">Trang kế</a></li>
-    <li><a href="./index.html">Trang cuối</a></li>
-  </ul>
+  @if(isset($diadiems))
+  <div class=" container-fluid">
+    <ul class="pagination">
+      @if($diadiems -> currentPage() != 1)
+      <li><a href="{{$diadiems -> url($diadiems -> currentPage() - 1)}}">Trang trước </a></li>
+      @endif
+      @for( $i = 1 ; $i <= $diadiems -> lastPage() ; $i++)
+      <li class="{{ ( $diadiems -> currentPage() == $i )? 'active' : '' }}">
+      <a href="{{$diadiems -> url($i)}}">{{$i}}</a>
+      </li>
+      @endfor
+      @if($diadiems -> currentPage() != $diadiems -> lastPage())
+      <li><a href="{{$diadiems -> url($diadiems -> currentPage() + 1)}}">Trang kế</a></li>
+      <li><a href="{{$diadiems -> url($diadiems -> lastPage())}}">Trang cuối</a></li>
+      @endif
+    </ul>
+  </div>
 
-</div>
+  @else
+  <div class=" container-fluid">
+    <ul class="pagination">
+      @if($theloais -> currentPage() != 1)
+      <li><a href="{{$theloais -> url($theloais -> currentPage() - 1)}}">Trang trước </a></li>
+      @endif
+      @for( $i = 1 ; $i <= $theloais -> lastPage() ; $i++)
+      <li class="{{ ( $theloais -> currentPage() == $i )? 'active' : '' }}">
+      <a href="{{$theloais -> url($i)}}">{{$i}}</a>
+      </li>
+      @endfor
+      @if($theloais -> currentPage() != $theloais -> lastPage())
+      <li><a href="{{$theloais -> url($theloais -> currentPage() + 1)}}">Trang kế</a></li>
+      <li><a href="{{$theloais -> url($theloais -> lastPage())}}">Trang cuối</a></li>
+      @endif
+    </ul>
+  </div>
+  @endif
 <!-- PAGENITION END -->
 
  <!-- CENTER CONTAIN END-->

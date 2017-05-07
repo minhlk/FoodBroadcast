@@ -1,9 +1,9 @@
-<div class="container col-xs-9 col-sm-9 col-md-9" style="margin-top:50px;">
+<div class="container col-xs-9 col-sm-9 col-md-9" style="margin-top:50px; margin-bottom: 2em;">
     <div class="row">
         @if(isset($diadiems) && isset($idHT))
             @foreach ($diadiems as $items)
                 @foreach ($items -> theloai -> where('id_hinhthuc','=',$idHT) as $diadiem) 
-                <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                     <div class="col-item">
                         <div class="photo">
                            <img src="{{$diadiem -> diadiem -> image}}"/>
@@ -43,7 +43,7 @@
             @endforeach
         @elseif(isset($diadiems))
          @foreach ($diadiems as $diadiem) 
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                 <div class="col-item">
                     <div class="photo">
                        <img src="{{$diadiem['image']}}"/>
@@ -84,7 +84,7 @@
         @elseif(isset($theloais))
 
          @foreach ($theloais as $item) 
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                 <div class="col-item">
                     <div class="photo">
                        <img src="{{$item -> diadiem -> image}}"/>
