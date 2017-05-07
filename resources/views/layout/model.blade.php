@@ -56,9 +56,9 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Forgot Your Password?
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </form>
@@ -94,44 +94,42 @@
           <h4 class="modal-title">Tìm kiếm nâng cao</h4>
         </div>
         <div class="modal-body">
-                                 <form action="./search" method="get"  class="form-horizontal" target="_blank">
-                                      <div class="form-group">
-                                        <label for="keyword">Từ khóa</label>
-                                        <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa" name="keyword">
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="price">Giá </label>
-                                        <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
-                                        <select class="form-control" id="price">
-                                          <option> 1</option>
-                                           <option> 1</option>
-                                            <option> 1</option>
-                                             <option> 1</option>
-                                        </select>
-                                      </div>
-                                      <div class="form-group">
-                                        <label for="place">Khu vực</label>
-                                        <select class="form-control" id="place">
-                                            <option> hcm</option>
-                                            <option>hà nội</option>
-                                        </select>
-
-                                      </div>
-                                       <div class="form-group">
-                                        <label for="like">Lượt yêu thích</label>
-                                        <select class="form-control" id="like">
-                                            <option> dưới 100</option>
-                                            <option>trên 1000</option>
-                                        </select>
-
-                                      </div>
-                                     
-
-                                     
-
-                                     <br>
-                                      <button type="submit" class="btn btn-danger">Tìm kiếm</button>
-                                </form>
+           <form action="./search" method="get"  class="form-horizontal" target="_blank">
+                <div class="form-group">
+                  <label for="keyword">Từ khóa</label>
+                  <input type="text" class="form-control" id="keyword" placeholder="Nhập từ khóa" name="keyword">
+                </div>
+                <div class="form-group">
+                  <label for="khuvuc">Khu vực </label>
+                  <!-- <input type="password" class="form-control" id="pwd" placeholder="Nhập lại password"> -->
+                  <select class="form-control" id="khuvuc" name="idKhuVuc">
+                  <option selected value>-- Chọn --</option>
+                  @foreach ($khuvuc as $khu)
+                  <option value="{{$khu -> id}}">{{$khu -> tenKV}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="thanhpho">Thành phố</label>
+                  <select class="form-control" id="thanhpho" name="idTP">
+                  <option selected value>-- Chọn --</option>
+                  @foreach ($thanhpho as $thanh)
+                  <option value="{{$thanh -> id}}" >{{$thanh -> tenTP}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="hinhthuc">Hình thức</label>
+                  <select class="form-control" id="hinhthuc" name="idHT">
+                  <option selected value>-- Chọn --</option>
+                  @foreach($hinhthuc as $item)
+                  <option value="{{$item -> id}}">{{$item -> tenHT}}</option>
+                  @endforeach
+                  </select>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-danger">Tìm kiếm</button>
+            </form>
 
 
 <!-- 

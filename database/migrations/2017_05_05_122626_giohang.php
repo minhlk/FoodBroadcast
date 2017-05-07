@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Theloai extends Migration
+class Giohang extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Theloai extends Migration
      */
     public function up()
     {
-        Schema::create('theloai', function (Blueprint $table) {
-            $table->integer('id_diadiem')->unsigned(); 
-            $table->integer('id_hinhthuc')->unsigned();
+         Schema::create('giohang', function (Blueprint $table) {
+            $table->integer('idUser');
+            $table->integer('idDiaDiem');
             $table->timestamps();
-
         });
-         DB::statement("ALTER TABLE theloai ADD UNIQUE no_duplicate_diadiem_hinhthuc (id_diadiem, id_hinhthuc)");
+         DB::statement("ALTER TABLE giohang ADD UNIQUE no_duplicate_phase_and_user (idUser, idDiaDiem)");
+
     }
 
     /**
@@ -29,6 +29,6 @@ class Theloai extends Migration
      */
     public function down()
     {
-        Schema::drop('theloai');
+          Schema::drop('khuvuc');
     }
 }

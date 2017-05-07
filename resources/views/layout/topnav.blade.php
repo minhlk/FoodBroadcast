@@ -12,14 +12,22 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse " aria-expanded="false" style="height: 1.5015px;">
           <ul class="nav navbar-nav ">
-            <li class="active"><a href="./">Trang Chủ</a></li>
-           <!--  <li><a href="#about" data-toggle="modal" data-target="#login">Đăng nhập</a></li>
-            <li><a href="#about" data-toggle="modal" data-target="#register">Đăng ký</a></li>
-            -->
-             <li class="">
-              <a  href="./cart">Giỏ hàng
+          @if(Route::current()->getName() == 'cart')
+            <li ><a href="./">Trang Chủ</a></li>
+
+             <li class="active">
+              <a  href="./cart">Đã lưu
               </a>
             </li> 
+            @else
+          <li class="active"><a href="./">Trang Chủ</a></li>
+
+             <li class="">
+              <a  href="./cart">Đã lưu
+              </a>
+            </li> 
+            @endif
+
             <li class="dropdown">
               <a href="./index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Khác <span class="caret"></span></a>
               <ul class="dropdown-menu">

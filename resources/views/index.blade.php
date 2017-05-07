@@ -37,7 +37,7 @@
   <!-- </div> -->
 
  <!-- RIGHT CONTAIN START-->
- @include('layout.rightcontain')
+ @include('layout.leftcontain')
  <!-- RIGHT CONTAIN END-->
 
  </div>

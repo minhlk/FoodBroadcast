@@ -32,17 +32,16 @@
 
  
  <!-- ITEM ROW 1 IN CENTER START -->
-  <div class="row">
-<blockquote>
-  <a href="./index.html">Trang Chủ</a>
-</blockquote>
-  <blockquote>
-  <p>Thông tin của : The US Drinks - Nguyễn Duy</p>
 
-</blockquote>
+<ol class="breadcrumb" style="text-align: left; background-color: firebrick;">
+  <li><a href="./" style="color: white;font-size: 20px;">Trang Chủ</a></li>
+  <li><a class="active" style="color: white;">Thông tin của : {{$diadiem -> ten}}</a></li>
+
+</ol>
 
 
-  </div>
+
+  </ol>
 <div class="row">
 <!-- PICTURE START -->
 <div class="col-lg-7  col-md-7 ">
@@ -59,16 +58,17 @@
   <hr>
   <div class="details_chitiet"><h4>Thông tin chi tiết :</h4>
   <i class="fa fa-comment-o" aria-hidden="true"></i>
-  <label>Đánh giá :</label>
-  <div class="progress">
+  <label>Mô tả:</label>
+  <p>{{$diadiem -> moTa}}</p>
+  <!-- <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
-      </div>
+      </div> -->
       <i class="fa fa-location-arrow" aria-hidden="true"></i>
        <label class="">Địa điểm :</label>
       <div class="">
-<span class=""><a href="/filter?idTP={{$diadiem -> idTP}}">{{$diadiem -> thanhpho -> ten}}</a></span>
-<span class=""><a href="/filter?idKhuVuc={{$diadiem -> idKhuVuc}}"> {{$diadiem -> khuvuc -> ten}}</a></span>
+<a href="{{url('/search?idTP='.$diadiem -> idTP)}}" class="label label-danger">{{$diadiem -> thanhpho -> tenTP}}</a>
+<a href="{{url('/search?idKhuVuc='.$diadiem -> idKhuVuc)}}" class="label label-danger"> {{$diadiem -> khuvuc -> tenKV}}</a>
     </div>
     <br>
     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -83,26 +83,29 @@
     <label class="">Giá tiền :</label>
 <div class="price ">
       
-      <p class=""> {{$diadiem-> giaMin }} vnđ- {{$diadiem->giaMax }} vnđ </p>
+      <p class=""> {{number_format($diadiem-> giaMin) }} vnđ- {{number_format($diadiem->giaMax) }} vnđ </p>
 
     </div>
     <i class="fa fa-phone" aria-hidden="true"></i>
      <label class="">Số điện thoại:</label>
 <div class="price ">
       
-      <p class=""> {{$diadiem-> soDienThoai }} </p>
+      <p class=""> {{number_format($diadiem-> soDienThoai),2 }} </p>
 
     </div>
      <label class="">Hình thức :</label>
 <div class="price ">
-     {{var_dump($diadiem -> hinhthuc ->ten)}}
+@foreach($theloai as $item)
+
+<a class="label label-danger" href="{{url('/search?idHT='.$item -> id_hinhthuc)}}">{{ $item -> hinhthuc -> tenHT}}</a>
+@endforeach
     </div>
-     <label class="">Ẩm thực :</label>
+    <!--  <label class="">Ẩm thực :</label>
 <div class="price ">
       
       <p class=""> Nam </p>
 
-    </div>
+    </div> -->
   </div>
 
 <form action="../html/giohang.html" class="form-horizontal">
@@ -133,13 +136,13 @@
 <hr style="margin-top: 12px;">
 
 
+ <!-- RIGHT CONTAIN START-->
+ @include('layout.leftcontain')
+ <!-- RIGHT CONTAIN END-->
  </div>
 
  <!-- CENTER CONTAIN END-->
 
- <!-- RIGHT CONTAIN START-->
- @include('layout.rightcontain')
- <!-- RIGHT CONTAIN END-->
 
 
 </div>
