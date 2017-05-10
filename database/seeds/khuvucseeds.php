@@ -16,53 +16,78 @@ class khuvucseeds extends Seeder
     		'tenKV' => 'quận 1',
     		]);
         DB::table('khuvuc')->insert([
-            'idTP' => '2',
+            'idTP' => '1',
             'tenKV' => 'quận 2',
             
             ]);
         DB::table('khuvuc')->insert([
-            'idTP' => '3',
+            'idTP' => '1',
             'tenKV' => 'quận 3',
             
             ]);
         DB::table('khuvuc')->insert([
-            'idTP' => '4',
+            'idTP' => '1',
             'tenKV' => 'quận 4',
             
             ]);
          DB::table('khuvuc')->insert([
-            'idTP' => '5',
+            'idTP' => '1',
             'tenKV' => 'quận 5',
             
             ]);
           DB::table('khuvuc')->insert([
-            'idTP' => '6',
+            'idTP' => '1',
             'tenKV' => 'quận 6',
             
             ]);
            DB::table('khuvuc')->insert([
-            'idTP' => '7',
+            'idTP' => '1',
             'tenKV' => 'quận 7',
             
             ]);
             DB::table('khuvuc')->insert([
-            'idTP' => '8',
+            'idTP' => '1',
             'tenKV' => 'quận 8',
             
             ]);
              DB::table('khuvuc')->insert([
-            'idTP' => '9',
+            'idTP' => '1',
             'tenKV' => 'quận 9',
             
             ]);
              DB::table('khuvuc')->insert([
-            'idTP' => '10',
+            'idTP' => '1',
             'tenKV' => 'quận Tân Bình',
             
             ]);
               DB::table('khuvuc')->insert([
-            'idTP' => '11',
+            'idTP' => '1',
             'tenKV' => 'quận Tân Phú',
+            
+            ]);
+              DB::table('khuvuc')->insert([
+            'idTP' => '2',
+            'tenKV' => ' quận Ba Đình',
+            
+            ]);
+             DB::table('khuvuc')->insert([
+            'idTP' => '2',
+            'tenKV' => ' quận Cầu Giấy',
+            
+            ]);
+             DB::table('khuvuc')->insert([
+            'idTP' => '2',
+            'tenKV' => ' quận Long Biên',
+            
+            ]);
+              DB::table('khuvuc')->insert([
+            'idTP' => '3',
+            'tenKV' => ' quận Ngô Quyền',
+            
+            ]);
+             DB::table('khuvuc')->insert([
+            'idTP' => '3',
+            'tenKV' => ' quận Đồ Sơn',
             
             ]);
     }
