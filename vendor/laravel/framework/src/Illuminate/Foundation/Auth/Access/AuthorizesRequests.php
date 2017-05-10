@@ -86,7 +86,7 @@ trait AuthorizesRequests
         $middleware = [];
 
         foreach ($this->resourceAbilityMap() as $method => $ability) {
-            $modelName = in_array($method, $this->resourceMethodsWithoutModels()) ? $model : $parameter;
+            $modelName = in_array($method, ['index', 'create', 'store']) ? $model : $parameter;
 
             $middleware["can:{$ability},{$modelName}"][] = $method;
         }
@@ -111,15 +111,5 @@ trait AuthorizesRequests
             'update' => 'update',
             'destroy' => 'delete',
         ];
-    }
-
-    /**
-     * Get the list of resource methods which do not have model parameters.
-     *
-     * @return array
-     */
-    protected function resourceMethodsWithoutModels()
-    {
-        return ['index', 'create', 'store'];
     }
 }

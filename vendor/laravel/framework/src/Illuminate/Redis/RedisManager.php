@@ -61,15 +61,13 @@ class RedisManager implements Factory
     /**
      * Resolve the given connection by name.
      *
-     * @param  string|null  $name
+     * @param  string  $name
      * @return \Illuminate\Redis\Connections\Connection
      *
      * @throws \InvalidArgumentException
      */
-    public function resolve($name = null)
+    protected function resolve($name)
     {
-        $name = $name ?: 'default';
-
         $options = Arr::get($this->config, 'options', []);
 
         if (isset($this->config[$name])) {

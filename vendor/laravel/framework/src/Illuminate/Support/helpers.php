@@ -5,7 +5,6 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Debug\Dumper;
 use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\HigherOrderTapProxy;
 
 if (! function_exists('append_config')) {
     /**
@@ -871,15 +870,11 @@ if (! function_exists('tap')) {
      * Call the given Closure with the given value then return the value.
      *
      * @param  mixed  $value
-     * @param  callable|null  $callback
+     * @param  callable  $callback
      * @return mixed
      */
-    function tap($value, $callback = null)
+    function tap($value, $callback)
     {
-        if (is_null($callback)) {
-            return new HigherOrderTapProxy($value);
-        }
-
         $callback($value);
 
         return $value;

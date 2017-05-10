@@ -203,8 +203,6 @@ class Command
      *
      * @return int The command exit code
      *
-     * @throws \Exception When binding input fails. Bypass this by calling {@link ignoreValidationErrors()}.
-     *
      * @see setCode()
      * @see execute()
      */

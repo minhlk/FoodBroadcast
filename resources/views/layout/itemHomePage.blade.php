@@ -4,7 +4,7 @@
         <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
             <div class="col-item">
                 <div class="photo">
-                    <img src="{{$diadiem['image']}}" class="img-responsive" alt="a" />
+                    <img src="./uploads/{{$diadiem['image']}}" class="img-responsive" alt="a" />
                 </div>
                 <div class="info">
                     <div class="row">

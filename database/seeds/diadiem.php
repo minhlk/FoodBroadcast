@@ -14,7 +14,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
     		'idTP' => '1',
     		'idKhuVuc' => '1',
-    		'image' => './uploads/im4.jpg',
+    		'image' => 'im4.jpg',
     		'ten' => 'Quán ăn gia đình 123',
     		'giaMin' => '10000',
     		'giaMax' => '100000',
@@ -30,7 +30,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '2',
             'idKhuVuc' => '2',
-            'image' => './uploads/im3.jpg',
+            'image' => 'im3.jpg',
             'ten' => 'Cafee gì đó ',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -46,7 +46,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '3',
             'idKhuVuc' => '3',
-            'image' => './uploads/im1.jpg',
+            'image' => 'im1.jpg',
             'ten' => 'Cơm sườn bao mắc',
             'giaMin' => '1000',
             'giaMax' => '1000000',
@@ -62,7 +62,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '5',
-            'image' => './uploads/im5.jpg',
+            'image' => 'im5.jpg',
             'ten' => 'Quán Cô Út - Bò Né',
             'giaMin' => '20000',
             'giaMax' => '40000',
@@ -78,7 +78,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '3',
-            'image' => './uploads/im6.jpg',
+            'image' => 'im6.jpg',
             'ten' => 'Kichi Kichi Lẩu Băng Chuyền ',
             'giaMin' => '149000',
             'giaMax' => '308000',
@@ -94,7 +94,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im7.jpg',
+            'image' => 'im7.jpg',
             'ten' => 'Amasvin Bubble Tea',
             'giaMin' => '29000',
             'giaMax' => '60000',
@@ -110,7 +110,7 @@ class diadiem extends Seeder
           DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im4.jpg',
+            'image' => 'im4.jpg',
             'ten' => 'Quán ăn gia đình 123',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -126,7 +126,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '2',
             'idKhuVuc' => '2',
-            'image' => './uploads/im3.jpg',
+            'image' => 'im3.jpg',
             'ten' => 'Cafee gì đó ',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -142,7 +142,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '3',
             'idKhuVuc' => '3',
-            'image' => './uploads/im1.jpg',
+            'image' => 'im1.jpg',
             'ten' => 'Cơm sườn bao mắc',
             'giaMin' => '1000',
             'giaMax' => '1000000',
@@ -158,7 +158,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '5',
-            'image' => './uploads/im5.jpg',
+            'image' => 'im5.jpg',
             'ten' => 'Quán Cô Út - Bò Né',
             'giaMin' => '20000',
             'giaMax' => '40000',
@@ -174,7 +174,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '3',
-            'image' => './uploads/im6.jpg',
+            'image' => 'im6.jpg',
             'ten' => 'Kichi Kichi Lẩu Băng Chuyền ',
             'giaMin' => '149000',
             'giaMax' => '308000',
@@ -190,7 +190,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im7.jpg',
+            'image' => 'im7.jpg',
             'ten' => 'Amasvin Bubble Tea',
             'giaMin' => '29000',
             'giaMax' => '60000',
@@ -206,7 +206,7 @@ class diadiem extends Seeder
           DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im4.jpg',
+            'image' => 'im4.jpg',
             'ten' => 'Quán ăn gia đình 123',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -222,7 +222,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '2',
             'idKhuVuc' => '2',
-            'image' => './uploads/im3.jpg',
+            'image' => 'im3.jpg',
             'ten' => 'Cafee gì đó ',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -238,7 +238,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '3',
             'idKhuVuc' => '3',
-            'image' => './uploads/im1.jpg',
+            'image' => 'im1.jpg',
             'ten' => 'Cơm sườn bao mắc',
             'giaMin' => '1000',
             'giaMax' => '1000000',
@@ -254,7 +254,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '5',
-            'image' => './uploads/im5.jpg',
+            'image' => 'im5.jpg',
             'ten' => 'Quán Cô Út - Bò Né',
             'giaMin' => '20000',
             'giaMax' => '40000',
@@ -270,7 +270,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '3',
-            'image' => './uploads/im6.jpg',
+            'image' => 'im6.jpg',
             'ten' => 'Kichi Kichi Lẩu Băng Chuyền ',
             'giaMin' => '149000',
             'giaMax' => '308000',
@@ -286,7 +286,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im7.jpg',
+            'image' => 'im7.jpg',
             'ten' => 'Amasvin Bubble Tea',
             'giaMin' => '29000',
             'giaMax' => '60000',
@@ -302,7 +302,7 @@ class diadiem extends Seeder
           DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im4.jpg',
+            'image' => 'im4.jpg',
             'ten' => 'Quán ăn gia đình 123',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -318,7 +318,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '2',
             'idKhuVuc' => '2',
-            'image' => './uploads/im3.jpg',
+            'image' => 'im3.jpg',
             'ten' => 'Cafee gì đó ',
             'giaMin' => '10000',
             'giaMax' => '100000',
@@ -334,7 +334,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '3',
             'idKhuVuc' => '3',
-            'image' => './uploads/im1.jpg',
+            'image' => 'im1.jpg',
             'ten' => 'Cơm sườn bao mắc',
             'giaMin' => '1000',
             'giaMax' => '1000000',
@@ -350,7 +350,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '5',
-            'image' => './uploads/im5.jpg',
+            'image' => 'im5.jpg',
             'ten' => 'Quán Cô Út - Bò Né',
             'giaMin' => '20000',
             'giaMax' => '40000',
@@ -366,7 +366,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '3',
-            'image' => './uploads/im6.jpg',
+            'image' => 'im6.jpg',
             'ten' => 'Kichi Kichi Lẩu Băng Chuyền ',
             'giaMin' => '149000',
             'giaMax' => '308000',
@@ -382,7 +382,7 @@ class diadiem extends Seeder
          DB::table('diadiem')->insert([
             'idTP' => '1',
             'idKhuVuc' => '1',
-            'image' => './uploads/im7.jpg',
+            'image' => 'im7.jpg',
             'ten' => 'Amasvin Bubble Tea',
             'giaMin' => '29000',
             'giaMax' => '60000',

@@ -85,7 +85,7 @@ class NotificationSender
                 continue;
             }
 
-            foreach ((array) $viaChannels as $channel) {
+            foreach ($viaChannels as $channel) {
                 $this->sendToNotifiable($notifiable, $notificationId, clone $original, $channel);
             }
         }

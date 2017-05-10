@@ -242,21 +242,7 @@ class Dispatcher implements DispatcherContract
      */
     protected function shouldBroadcast(array $payload)
     {
-        return isset($payload[0]) &&
-               $payload[0] instanceof ShouldBroadcast &&
-               $this->broadcastWhen($payload[0]);
-    }
-
-    /**
-     * Check if event should be broadcasted by condition.
-     *
-     * @param  mixed  $event
-     * @return bool
-     */
-    protected function broadcastWhen($event)
-    {
-        return method_exists($event, 'broadcastWhen')
-                ? $event->broadcastWhen() : true;
+        return isset($payload[0]) && $payload[0] instanceof ShouldBroadcast;
     }
 
     /**
@@ -333,7 +319,7 @@ class Dispatcher implements DispatcherContract
      *
      * @param  string|\Closure  $listener
      * @param  bool  $wildcard
-     * @return \Closure
+     * @return mixed
      */
     public function makeListener($listener, $wildcard = false)
     {

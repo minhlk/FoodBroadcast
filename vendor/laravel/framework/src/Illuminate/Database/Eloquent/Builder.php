@@ -98,17 +98,6 @@ class Builder
     }
 
     /**
-     * Create and return and un-saved model instance.
-     *
-     * @param  array  $attributes
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function make(array $attributes = [])
-    {
-        return $this->newModelInstance($attributes);
-    }
-
-    /**
      * Register a new global scope.
      *
      * @param  string  $identifier
@@ -196,7 +185,7 @@ class Builder
      *
      * @param  string|\Closure  $column
      * @param  string  $operator
-     * @param  mixed  $value
+     * @param  mixed   $value
      * @param  string  $boolean
      * @return $this
      */
@@ -220,7 +209,7 @@ class Builder
      *
      * @param  string|\Closure  $column
      * @param  string  $operator
-     * @param  mixed  $value
+     * @param  mixed   $value
      * @return \Illuminate\Database\Eloquent\Builder|static
      */
     public function orWhere($column, $operator = null, $value = null)
@@ -236,7 +225,7 @@ class Builder
      */
     public function hydrate(array $items)
     {
-        $instance = $this->newModelInstance();
+        $instance = $this->model->newInstance();
 
         return $instance->newCollection(array_map(function ($item) use ($instance) {
             return $instance->newFromBuilder($item);
@@ -252,8 +241,10 @@ class Builder
      */
     public function fromQuery($query, $bindings = [])
     {
+        $instance = $this->model->newInstance();
+
         return $this->hydrate(
-            $this->query->getConnection()->select($query, $bindings)
+            $instance->getConnection()->select($query, $bindings)
         );
     }
 
@@ -266,7 +257,7 @@ class Builder
      */
     public function find($id, $columns = ['*'])
     {
-        if (is_array($id) || $id instanceof Arrayable) {
+        if (is_array($id)) {
             return $this->findMany($id, $columns);
         }
 
@@ -328,7 +319,9 @@ class Builder
             return $model;
         }
 
-        return $this->newModelInstance();
+        return $this->model->newInstance()->setConnection(
+            $this->query->getConnection()->getName()
+        );
     }
 
     /**
@@ -344,7 +337,9 @@ class Builder
             return $instance;
         }
 
-        return $this->newModelInstance($attributes + $values);
+        return $this->model->newInstance($attributes + $values)->setConnection(
+            $this->query->getConnection()->getName()
+        );
     }
 
     /**
@@ -360,9 +355,13 @@ class Builder
             return $instance;
         }
 
-        return tap($this->newModelInstance($attributes + $values), function ($instance) {
-            $instance->save();
-        });
+        $instance = $this->model->newInstance($attributes + $values)->setConnection(
+            $this->query->getConnection()->getName()
+        );
+
+        $instance->save();
+
+        return $instance;
     }
 
     /**
@@ -460,7 +459,8 @@ class Builder
     public function getModels($columns = ['*'])
     {
         return $this->model->hydrate(
-            $this->query->get($columns)->all()
+            $this->query->get($columns)->all(),
+            $this->model->getConnectionName()
         )->all();
     }
 
@@ -731,9 +731,13 @@ class Builder
      */
     public function create(array $attributes = [])
     {
-        return tap($this->newModelInstance($attributes), function ($instance) {
-            $instance->save();
-        });
+        $instance = $this->model->newInstance($attributes)->setConnection(
+            $this->query->getConnection()->getName()
+        );
+
+        $instance->save();
+
+        return $instance;
     }
 
     /**
@@ -744,8 +748,12 @@ class Builder
      */
     public function forceCreate(array $attributes)
     {
-        return $this->model->unguarded(function () use ($attributes) {
-            return $this->newModelInstance()->create($attributes);
+        $instance = $this->model->newInstance()->setConnection(
+            $this->query->getConnection()->getName()
+        );
+
+        return $this->model->unguarded(function () use ($attributes, $instance) {
+            return $instance->create($attributes);
         });
     }
 
@@ -912,8 +920,8 @@ class Builder
     /**
      * Apply the given scope on the current builder instance.
      *
-     * @param  callable  $scope
-     * @param  array  $parameters
+     * @param  callable $scope
+     * @param  array $parameters
      * @return mixed
      */
     protected function callScope(callable $scope, $parameters = [])
@@ -1031,19 +1039,6 @@ class Builder
     }
 
     /**
-     * Create a new instance of the model being queried.
-     *
-     * @param  array  $attributes
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function newModelInstance($attributes = [])
-    {
-        return $this->model->newInstance($attributes)->setConnection(
-            $this->query->getConnection()->getName()
-        );
-    }
-
-    /**
      * Parse a list of relations into individuals.
      *
      * @param  array  $relations
@@ -1095,7 +1090,7 @@ class Builder
      * Parse the nested relationships in a relation.
      *
      * @param  string  $name
-     * @param  array  $results
+     * @param  array   $results
      * @return array
      */
     protected function addNestedWiths($name, $results)
@@ -1214,7 +1209,7 @@ class Builder
      * Dynamically handle calls into the query instance.
      *
      * @param  string  $method
-     * @param  array  $parameters
+     * @param  array   $parameters
      * @return mixed
      */
     public function __call($method, $parameters)
@@ -1256,7 +1251,7 @@ class Builder
      * Dynamically handle calls into the query instance.
      *
      * @param  string  $method
-     * @param  array  $parameters
+     * @param  array   $parameters
      * @return mixed
      *
      * @throws \BadMethodCallException

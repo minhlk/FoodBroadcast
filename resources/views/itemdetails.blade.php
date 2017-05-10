@@ -34,7 +34,7 @@
         <div class="row">
           <!-- PICTURE START -->
           <div class="col-lg-7  col-md-7 ">
-            <img src="{{$diadiem-> image }}">
+            <img src="./uploads/{{$diadiem-> image }}">
             </div>
             <!-- PICTURE END -->
             <!-- DETAILS START -->
@@ -114,7 +114,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3">
                   <div class="col-item">
                     <div class="photo">
-                      <img src="{{$diadiem['image']}}"/>
+                      <img src="./uploads/{{$diadiem['image']}}"/>
                     </div>
                     <div class="info">
                       <div class="row">

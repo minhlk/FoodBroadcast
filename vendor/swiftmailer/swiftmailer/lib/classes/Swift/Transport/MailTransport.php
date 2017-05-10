@@ -77,7 +77,7 @@ class Swift_Transport_MailTransport implements Swift_Transport
      *
      * @param string $params
      *
-     * @return $this
+     * @return Swift_Transport_MailTransport
      */
     public function setExtraParams($params)
     {

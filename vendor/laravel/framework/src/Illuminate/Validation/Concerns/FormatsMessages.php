@@ -205,7 +205,7 @@ trait FormatsMessages
         );
 
         if (isset($this->replacers[Str::snake($rule)])) {
-            return $this->callReplacer($message, $attribute, Str::snake($rule), $parameters, $this);
+            return $this->callReplacer($message, $attribute, Str::snake($rule), $parameters);
         } elseif (method_exists($this, $replacer = "replace{$rule}")) {
             return $this->$replacer($message, $attribute, $rule, $parameters);
         }
@@ -219,7 +219,7 @@ trait FormatsMessages
      * @param  string  $attribute
      * @return string
      */
-    public function getDisplayableAttribute($attribute)
+    protected function getDisplayableAttribute($attribute)
     {
         $primaryAttribute = $this->getPrimaryAttribute($attribute);
 
@@ -328,17 +328,16 @@ trait FormatsMessages
      * @param  string  $attribute
      * @param  string  $rule
      * @param  array   $parameters
-     * @param  \Illuminate\Validation\Validator  $validator
      * @return string|null
      */
-    protected function callReplacer($message, $attribute, $rule, $parameters, $validator)
+    protected function callReplacer($message, $attribute, $rule, $parameters)
     {
         $callback = $this->replacers[$rule];
 
         if ($callback instanceof Closure) {
             return call_user_func_array($callback, func_get_args());
         } elseif (is_string($callback)) {
-            return $this->callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters, $validator);
+            return $this->callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters);
         }
     }
 
@@ -350,10 +349,9 @@ trait FormatsMessages
      * @param  string  $attribute
      * @param  string  $rule
      * @param  array   $parameters
-     * @param  \Illuminate\Validation\Validator  $validator
      * @return string
      */
-    protected function callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters, $validator)
+    protected function callClassBasedReplacer($callback, $message, $attribute, $rule, $parameters)
     {
         list($class, $method) = Str::parseCallback($callback, 'replace');
 

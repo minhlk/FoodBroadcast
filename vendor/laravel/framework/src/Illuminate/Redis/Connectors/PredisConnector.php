@@ -18,11 +18,9 @@ class PredisConnector
      */
     public function connect(array $config, array $options)
     {
-        $formattedOptions = array_merge(
+        return new PredisConnection(new Client($config, array_merge(
             ['timeout' => 10.0], $options, Arr::pull($config, 'options', [])
-        );
-
-        return new PredisConnection(new Client($config, $formattedOptions));
+        )));
     }
 
     /**

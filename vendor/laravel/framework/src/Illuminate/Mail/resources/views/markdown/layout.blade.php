@@ -1,9 +1,9 @@
 {!! strip_tags($header) !!}
 
 {!! strip_tags($slot) !!}
-@isset($subcopy)
+@if (isset($subcopy))
 
 {!! strip_tags($subcopy) !!}
-@endisset
+@endif
 
 {!! strip_tags($footer) !!}

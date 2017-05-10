@@ -9,7 +9,6 @@ use Illuminate\Contracts\Queue\Job;
 use Illuminate\Queue\WorkerOptions;
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
-use Illuminate\Queue\Events\JobProcessing;
 
 class WorkCommand extends Command
 {
@@ -123,16 +122,12 @@ class WorkCommand extends Command
      */
     protected function listenForEvents()
     {
-        $this->laravel['events']->listen(JobProcessing::class, function ($event) {
-            $this->writeOutput($event->job, 'starting');
-        });
-
         $this->laravel['events']->listen(JobProcessed::class, function ($event) {
-            $this->writeOutput($event->job, 'success');
+            $this->writeOutput($event->job, false);
         });
 
         $this->laravel['events']->listen(JobFailed::class, function ($event) {
-            $this->writeOutput($event->job, 'failed');
+            $this->writeOutput($event->job, true);
 
             $this->logFailedJob($event);
         });
@@ -142,36 +137,16 @@ class WorkCommand extends Command
      * Write the status output for the queue worker.
      *
      * @param  \Illuminate\Contracts\Queue\Job  $job
-     * @param  string $status
+     * @param  bool  $failed
      * @return void
      */
-    protected function writeOutput(Job $job, $status)
+    protected function writeOutput(Job $job, $failed)
     {
-        switch ($status) {
-            case 'starting':
-                return $this->writeStatus($job, 'Processing', 'comment');
-            case 'success':
-                return $this->writeStatus($job, 'Processed', 'info');
-            case 'failed':
-                return $this->writeStatus($job, 'Failed', 'error');
+        if ($failed) {
+            $this->output->writeln('<error>['.Carbon::now()->format('Y-m-d H:i:s').'] Failed:</error> '.$job->resolveName());
+        } else {
+            $this->output->writeln('<info>['.Carbon::now()->format('Y-m-d H:i:s').'] Processed:</info> '.$job->resolveName());
         }
-    }
-
-    /**
-     * Format the status output for the queue worker.
-     *
-     * @param  \Illuminate\Contracts\Queue\Job  $job
-     * @param  string  $status
-     * @param  string  $type
-     * @return void
-     */
-    protected function writeStatus(Job $job, $status, $type)
-    {
-        $this->output->writeln(sprintf(
-            "<{$type}>[%s] %s</{$type}> %s",
-            Carbon::now()->format('Y-m-d H:i:s'),
-            str_pad("{$status}:", 11), $job->resolveName()
-        ));
     }
 
     /**

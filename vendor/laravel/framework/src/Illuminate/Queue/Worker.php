@@ -5,15 +5,12 @@ namespace Illuminate\Queue;
 use Exception;
 use Throwable;
 use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Database\DetectsLostConnections;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
 
 class Worker
 {
-    use DetectsLostConnections;
-
     /**
      * The queue manager instance.
      *
@@ -242,8 +239,6 @@ class Worker
             }
         } catch (Exception $e) {
             $this->exceptions->report($e);
-
-            $this->stopWorkerIfLostConnection($e);
         } catch (Throwable $e) {
             $this->exceptions->report(new FatalThrowableError($e));
         }
@@ -263,23 +258,8 @@ class Worker
             return $this->process($connectionName, $job, $options);
         } catch (Exception $e) {
             $this->exceptions->report($e);
-
-            $this->stopWorkerIfLostConnection($e);
         } catch (Throwable $e) {
             $this->exceptions->report(new FatalThrowableError($e));
-        }
-    }
-
-    /**
-     * Stop the worker if we have lost connection to a database.
-     *
-     * @param  \Exception  $e
-     * @return void
-     */
-    protected function stopWorkerIfLostConnection($e)
-    {
-        if ($this->causedByLostConnection($e)) {
-            $this->shouldQuit = true;
         }
     }
 

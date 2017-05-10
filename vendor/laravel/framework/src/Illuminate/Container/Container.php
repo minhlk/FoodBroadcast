@@ -576,10 +576,10 @@ class Container implements ArrayAccess, ContainerContract
      */
     protected function resolve($abstract, $parameters = [])
     {
-        $abstract = $this->getAlias($abstract);
+        $this->with[] = $parameters;
 
         $needsContextualBuild = ! empty($parameters) || ! is_null(
-            $this->getContextualConcrete($abstract)
+            $this->getContextualConcrete($abstract = $this->getAlias($abstract))
         );
 
         // If an instance of the type is currently being managed as a singleton we'll
@@ -588,8 +588,6 @@ class Container implements ArrayAccess, ContainerContract
         if (isset($this->instances[$abstract]) && ! $needsContextualBuild) {
             return $this->instances[$abstract];
         }
-
-        $this->with[] = $parameters;
 
         $concrete = $this->getConcrete($abstract);
 

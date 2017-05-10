@@ -11,6 +11,7 @@ use Illuminate\Console\Application as Artisan;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Cache\Repository as Cache;
+use Illuminate\Contracts\Queue\Queue as QueueContract;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 
@@ -225,11 +226,13 @@ class Kernel implements KernelContract
      *
      * @param  string  $command
      * @param  array   $parameters
-     * @return \Illuminate\Foundation\Bus\PendingDispatch
+     * @return void
      */
     public function queue($command, array $parameters = [])
     {
-        return QueuedCommand::dispatch(func_get_args());
+        $this->app[QueueContract::class]->push(
+            new QueuedCommand(func_get_args())
+        );
     }
 
     /**

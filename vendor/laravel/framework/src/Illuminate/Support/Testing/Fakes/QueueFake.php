@@ -2,11 +2,10 @@
 
 namespace Illuminate\Support\Testing\Fakes;
 
-use Illuminate\Queue\QueueManager;
 use Illuminate\Contracts\Queue\Queue;
-use PHPUnit\Framework\Assert as PHPUnit;
+use PHPUnit_Framework_Assert as PHPUnit;
 
-class QueueFake extends QueueManager implements Queue
+class QueueFake implements Queue
 {
     /**
      * All of the jobs that have been pushed.

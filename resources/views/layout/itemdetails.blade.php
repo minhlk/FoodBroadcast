@@ -6,7 +6,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                     <div class="col-item">
                         <div class="photo">
-                           <img src="{{$diadiem -> diadiem -> image}}"/>
+                           <img src="./uploads/{{$diadiem -> diadiem -> image}}"/>
                         </div>
                         <div class="info">
                             <div class="row">
@@ -46,7 +46,7 @@
             <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                 <div class="col-item">
                     <div class="photo">
-                       <img src="{{$diadiem['image']}}"/>
+                       <img src="./uploads/{{$diadiem['image']}}"/>
                     </div>
                     <div class="info">
                         <div class="row">
@@ -87,7 +87,7 @@
             <div class="col-xs-12 col-sm-6 col-md-3" style="margin-bottom: 2em;">
                 <div class="col-item">
                     <div class="photo">
-                       <img src="{{$item -> diadiem -> image}}"/>
+                       <img src="./uploads/{{$item -> diadiem -> image}}"/>
                     </div>
                     <div class="info">
                         <div class="row">

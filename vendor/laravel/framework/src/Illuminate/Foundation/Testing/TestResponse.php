@@ -5,6 +5,7 @@ namespace Illuminate\Foundation\Testing;
 use Closure;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Illuminate\Http\Response;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Traits\Macroable;
 use PHPUnit\Framework\Assert as PHPUnit;
@@ -349,7 +350,7 @@ class TestResponse
     public function assertJsonStructure(array $structure = null, $responseData = null)
     {
         if (is_null($structure)) {
-            return $this->assertJson($this->json());
+            return $this->assertJson();
         }
 
         if (is_null($responseData)) {
@@ -625,7 +626,7 @@ class TestResponse
      * Handle dynamic calls into macros or pass missing methods to the base response.
      *
      * @param  string  $method
-     * @param  array  $args
+     * @param  array  $parameters
      * @return mixed
      */
     public function __call($method, $args)
