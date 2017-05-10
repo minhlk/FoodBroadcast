@@ -144,6 +144,7 @@ transition-delay:.2s;
   display: -ms-flexbox;
   display:         flex;
   flex-wrap: wrap;
+  margin-right: 0px;
 }
 .row > [class*='col-'] {
   display: flex;

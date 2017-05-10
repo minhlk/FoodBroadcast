@@ -45,7 +45,7 @@
         <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="col-item">
                 <div class="photo">
-                   <img src="{{$diadiem -> options -> image}}"/>
+                   <img src="./uploads/{{$diadiem -> options -> image}}"/>
                 </div>
                 <div class="info">
                     <div class="row">

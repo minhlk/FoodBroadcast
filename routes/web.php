@@ -22,6 +22,20 @@ Route::get('/cart/id={id}','cartcontroller@addToCart');
 Route::get('/cart/removeid={id}','cartcontroller@removeFromCart');
 Route::get('/cart/save/','cartcontroller@saveToDB');
 Route::get('/cart/deleteid={id}','cartcontroller@removefromDB');
+Route::get('/lienhe', 'lienhe@load');
+// CRUD::resource('admin/theloai', 'Admin\TheloaiCrudController');
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+{
+  // Backpack\CRUD: Define the resources for the entities you want to CRUD.
+    CRUD::resource('theloai', 'Admin\TheloaiCrudController');
+    CRUD::resource('users', 'Admin\UsersCrudController');
+    CRUD::resource('diadiem', 'Admin\DiadiemCrudController');
+    CRUD::resource('hinhthuc', 'Admin\HinhthucCrudController');
+    CRUD::resource('khuvuc', 'Admin\KhuvucCrudController');
+    CRUD::resource('thanhpho', 'Admin\ThanhphoCrudController');
+  
+  // [...] other routes
+});
 //for login logout
 Auth::routes();
 Route::get('test','testcontroller@test');

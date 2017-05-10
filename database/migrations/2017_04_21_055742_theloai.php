@@ -14,6 +14,7 @@ class Theloai extends Migration
     public function up()
     {
         Schema::create('theloai', function (Blueprint $table) {
+            $table->increments('id')->unique();
             $table->integer('id_diadiem')->unsigned(); 
             $table->integer('id_hinhthuc')->unsigned();
             $table->timestamps();

@@ -32,9 +32,9 @@
                 <!-- <a href="#" class="list-group-item text-left active">Bình luận</a> -->
                 <a href="#danhmuc4" data-toggle="collapse" class="list-group-item text-left active">Chia sẻ</a>
                      <div class="list-group collapse" id="danhmuc4">
-                      <a href="./index.html" class="list-group-item text-left">Facebook</a>
-                      <a href="./index.html" class="list-group-item text-left">Twitter</a>
-                      <a href="./index.html" class="list-group-item text-left">Zalo</a>
+                      <a href="https://www.facebook.com/" target="_blank" class="list-group-item text-left">Facebook</a>
+                      <a href="https://twitter.com" target="_blank" class="list-group-item text-left">Twitter</a>
+                      <a href="http://zalo.me" target="_blank" class="list-group-item text-left">Zalo</a>
                     </div>
              
 </div> 

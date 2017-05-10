@@ -20,9 +20,32 @@ class hinhthuc extends Seeder
     		'mota' => 'rất vỉa hè'
     		]);
         DB::table('hinhthuc')->insert([
-    		'tenHT' => 'Lề đường',
+    		'tenHT' => 'Ăn chay',
     		'mota' => 'rất lề đường'
     		]);
-        
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Ăn vặt',
+            'mota' => 'rất lề đường'
+            ]);
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Khu ẩm thực',
+            'mota' => 'rất lề đường'
+            ]);
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Tiệc tận nơi',
+            'mota' => 'rất lề đường'
+            ]);
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Vũ trường',
+            'mota' => 'rất lề đường'
+            ]);
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Bar',
+            'mota' => 'rất lề đường'
+            ]);
+        DB::table('hinhthuc')->insert([
+            'tenHT' => 'Ngoài trời',
+            'mota' => 'rất lề đường'
+            ]);
     }
 }

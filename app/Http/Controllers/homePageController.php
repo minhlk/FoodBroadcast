@@ -14,7 +14,7 @@ class homePageController extends Controller
     	// $monAns = DB::table('monan')->get(); 
     	// $monAns = DB::table('monan') -> join('chitietmonan','monan.idMonAn','=','chitietmonan.idMonAn')-> join('khuvuc','khuvuc.idKhuVuc','=','chitietmonan.idKhuVuc')->get();
 
-    	$diadiems = diadiem :: all() ;
+    	$diadiems = diadiem ::paginate(8);
     	$khuvuc = rightPaneController::get();
     	$thanhpho = thanhpho::all();
     	$hinhthuc = hinhthuc::all();
