@@ -20,7 +20,7 @@ class UsersCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Users');
         $this->crud->setRoute('admin/users');
-        $this->crud->setEntityNameStrings('users', ' Tài khoản Người dùng');
+        $this->crud->setEntityNameStrings('Tài khoản Người dùng', 'Tài khoản Người dùng');
 
         /*
         |--------------------------------------------------------------------------

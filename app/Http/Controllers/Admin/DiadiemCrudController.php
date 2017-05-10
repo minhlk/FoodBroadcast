@@ -20,7 +20,7 @@ class DiadiemCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Diadiem');
         $this->crud->setRoute('admin/diadiem');
-        $this->crud->setEntityNameStrings('diadiem', ' Địa điểm');
+        $this->crud->setEntityNameStrings('Địa điểm', 'Địa điểm');
 
         /*
         |--------------------------------------------------------------------------

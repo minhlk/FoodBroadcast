@@ -20,7 +20,7 @@ class KhuvucCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Khuvuc');
         $this->crud->setRoute('admin/khuvuc');
-        $this->crud->setEntityNameStrings('khuvuc', ' Khu vực');
+        $this->crud->setEntityNameStrings('Khu vực', 'Khu vực');
 
         /*
         |--------------------------------------------------------------------------
