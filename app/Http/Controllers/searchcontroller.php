@@ -32,7 +32,7 @@ class searchcontroller extends Controller
             $khuvuc = khuvuc::all();
             $thanhpho = thanhpho::all();
             $hinhthuc = hinhthuc::all();
-            $diadiems = diadiem::where( $conditions ) -> get();
+            $diadiems = diadiem::where( $conditions ) -> paginate(8);
             if ($req -> has('idHT')){
                 // array_push($conditions, ['idHT','=',$req -> idHT]); //??
                 $idHT = $req -> idHT; 
@@ -65,7 +65,7 @@ class searchcontroller extends Controller
     	elseif($req -> has('idKhuVuc') )
     	 	return view('filter',
     	 		['kv' =>khuvuc::where('id',$req -> idKhuVuc)->first()
-                ,'diadiems' => diadiem::where('idKhuVuc','=',$req -> idKhuVuc) -> get()
+                ,'diadiems' => diadiem::where('idKhuVuc','=',$req -> idKhuVuc) -> paginate(8)
                 ,'khuvuc' =>khuvuc::all()
                 , 'thanhpho' => thanhpho::all()
                 , 'hinhthuc' => hinhthuc::all()
@@ -74,7 +74,7 @@ class searchcontroller extends Controller
         elseif ($req -> has('idTP')) {
             return view('filter'
                 ,['tp' =>thanhpho::where('id',$req -> idTP)->first()
-                ,'diadiems' => diadiem::where('idTP','=',$req -> idTP) -> get()
+                ,'diadiems' => diadiem::where('idTP','=',$req -> idTP) -> paginate(8)
                 ,'khuvuc' =>khuvuc::all()
                 ,'thanhpho' => thanhpho::all()
                 , 'hinhthuc' => hinhthuc::all()
@@ -83,7 +83,7 @@ class searchcontroller extends Controller
          elseif ($req -> has('idHT')) {
             return view('filter'
                 ,['ht' =>hinhthuc::where('id',$req -> idHT)->first()
-                ,'theloais' => theloai::where('id_hinhthuc','=',$req -> idHT) -> get()
+                ,'theloais' => theloai::where('id_hinhthuc','=',$req -> idHT) -> paginate(8)
                 ,'khuvuc' =>khuvuc::all()
                 , 'hinhthuc' => hinhthuc::all()
                 ,'thanhpho' => thanhpho::all()]);
@@ -93,7 +93,7 @@ class searchcontroller extends Controller
 
     	 	return view('search',[
                 'keyword' => $key 
-                ,'diadiems' => diadiem::where('ten','like', '%'.$key.'%') -> get()
+                ,'diadiems' => diadiem::where('ten','like', '%'.$key.'%') -> paginate(8)
                 ,'khuvuc' => khuvuc::getKhuVuc()
                 , 'thanhpho' => thanhpho::all()
                 , 'hinhthuc' => hinhthuc::all()
