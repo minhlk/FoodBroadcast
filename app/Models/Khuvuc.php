@@ -34,7 +34,10 @@ class Khuvuc extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function thanhpho(){
 
+        return $this -> hasOne('App\thanhpho','id','id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

@@ -20,7 +20,7 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url('admin/theloai') }}"><i class="fa fa-tag"></i> <span>Thể loại</span></a></li>
-          <li><a href="{{ url('admin/users') }}"><i class="fa fa-tag"></i> <span>Users</span></a></li>
+          <li><a href="{{ url('admin/users') }}"><i class="fa fa-tag"></i> <span> Tài khoản người dùng</span></a></li>
           <li><a href="{{ url('admin/diadiem') }}"><i class="fa fa-tag"></i> <span> Địa điểm </span></a></li>
           <li><a href="{{ url('admin/hinhthuc') }}"><i class="fa fa-tag"></i> <span> Hình thức </span></a></li>
           <li><a href="{{ url('admin/khuvuc') }}"><i class="fa fa-tag"></i> <span> Khu vực </span></a></li>

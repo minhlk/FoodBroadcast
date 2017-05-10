@@ -20,7 +20,7 @@ class KhuvucCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Khuvuc');
         $this->crud->setRoute('admin/khuvuc');
-        $this->crud->setEntityNameStrings('khuvuc', 'khuvucs');
+        $this->crud->setEntityNameStrings('Khu vực', 'Khu vực');
 
         /*
         |--------------------------------------------------------------------------
@@ -42,10 +42,17 @@ class KhuvucCrudController extends CrudController
                     'type' => 'text'
                 ]);       
         $this->crud->addColumn(
-                    [   // Number
+                    [   
                     'name' => 'idTP',
                     'label' => 'Mã thành phố',
                     'type' => 'number'
+                   //   'label' => 'Thành phố',  
+                   // 'type' => 'select',
+                   // 'name' => 'idTP', // the db column for the foreign key
+                   // 'entity' => 'thanhpho', // the method that defines the relationship in your Model
+                   // 'attribute' => 'tenTP', // foreign key attribute that is shown to user
+                   // 'model' => 'App\Models\thanhpho'
+        
                 ]); 
         $this->crud->addColumn(
                     [   // Number
