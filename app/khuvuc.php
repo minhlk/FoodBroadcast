@@ -13,6 +13,10 @@ class khuvuc extends Model
 
 	    return $this -> hasMany('App\diadiem','id','id');
 	}
+	public function thanhpho(){
+
+	    return $this -> hasOne('App\thanhpho','id','id');
+	}
 	public static function getKhuVuc(){
 		return DB::table('khuvuc') ->get();
 	}

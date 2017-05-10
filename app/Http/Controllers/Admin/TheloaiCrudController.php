@@ -20,7 +20,7 @@ class TheloaiCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Theloai');
         $this->crud->setRoute('admin/theloai');
-        $this->crud->setEntityNameStrings('theloai', 'theloais');
+        $this->crud->setEntityNameStrings(' Thể loại', ' Thể loại ');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,8 +28,42 @@ class TheloaiCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
 
+        $this->crud->addField(
+                    [   // Number
+                    'name' => 'id_diadiem',
+                    'label' => 'Mã địa điểm ',
+                    'type' => 'text'
+                ]);       
+        $this->crud->addField(
+                    [   
+
+                     'label' => 'Hình thức',  
+                   'type' => 'select',
+                   'name' => 'id_hinhthuc', // the db column for the foreign key
+                   'entity' => 'hinhthuc', // the method that defines the relationship in your Model
+                   'attribute' => 'tenHT', // foreign key attribute that is shown to user
+                   'model' => "App\Models\Hinhthuc" // foreign key model
+        
+                ]);       
+        
+        $this->crud->addColumn(
+                    [   // Number
+                     'name' => 'id_diadiem',
+                    'label' => 'Mã địa điểm ',
+                    'type' => 'text'
+                ]);    
+        $this->crud->addColumn(
+                    [   // Number
+                   'label' => 'Hình thức',  
+                   'type' => 'select',
+                   'name' => 'id_hinhthuc', // the db column for the foreign key
+                   'entity' => 'hinhthuc', // the method that defines the relationship in your Model
+                   'attribute' => 'tenHT', // foreign key attribute that is shown to user
+                   'model' => "App\Models\Hinhthuc" // foreign key model
+                ]);       
+        
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
         // $this->crud->addFields($array_of_arrays, 'update/create/both');

@@ -90,7 +90,7 @@
         <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="col-item">
                 <div class="photo">
-                   <img src="{{$diadiem -> diadiem -> image}}"/>
+                   <img src="./uploads/{{$diadiem -> diadiem -> image}}"/>
                 </div>
                 <div class="info">
                     <div class="row">

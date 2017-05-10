@@ -20,7 +20,7 @@ class ThanhphoCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Thanhpho');
         $this->crud->setRoute('admin/thanhpho');
-        $this->crud->setEntityNameStrings('thanhpho', 'thanhphos');
+        $this->crud->setEntityNameStrings('Thành phố', 'Thành phố');
 
         
         $this->crud->addField(
@@ -30,6 +30,12 @@ class ThanhphoCrudController extends CrudController
                     'type' => 'text'
                 ]);       
         
+        $this->crud->addColumn(
+                    [   // Number
+                    'name' => 'id',
+                    'label' => 'Mã thành phố',
+                    'type' => 'text'
+                ]);     
         $this->crud->addColumn(
                     [   // Number
                     'name' => 'tenTP',

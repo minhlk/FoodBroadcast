@@ -19,7 +19,7 @@ class Diadiem extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['idTP', 'idKhuVuc', 'image', 'ten', 'giaMin', 'giaMax','soDienThoai', 'gioBatDau', 'phutBatDau', 'gioKetThuc', 'phutKetThuc'];
+    protected $fillable = ['idTP', 'idKhuVuc', 'image', 'ten', 'giaMin', 'giaMax','diaChi','moTa','trangWeb','soDienThoai', 'gioBatDau', 'phutBatDau', 'gioKetThuc', 'phutKetThuc'];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,6 +34,10 @@ class Diadiem extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function thanhpho(){
+
+        return $this -> hasOne('App\thanhpho','id','idTP');
+    }
 
     /*
     |--------------------------------------------------------------------------
