@@ -20,7 +20,7 @@ class DiadiemCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Diadiem');
         $this->crud->setRoute('admin/diadiem');
-        $this->crud->setEntityNameStrings('diadiem', 'diadiems');
+        $this->crud->setEntityNameStrings('diadiem', ' Địa điểm');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,26 +28,35 @@ class DiadiemCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
         
-        $this->crud->addField(
-            [   // Number
-            'name' => 'idTP',
-            'label' => 'Mã thành phố',
-            'type' => 'number'
-            // optionals
-            // 'attributes' => ["step" => "any"], // allow decimals
-            // 'prefix' => "$",
-            // 'suffix' => ".00",
-        ]
+        // $this->crud->addField(
+        //     [   // Number
+        //     'name' => 'idTP',
+        //     'label' => 'Mã thành phố',
+        //     'type' => 'number'
+        //     // optionals
+        //     // 'attributes' => ["step" => "any"], // allow decimals
+        //     // 'prefix' => "$",
+        //     // 'suffix' => ".00",
+        // ]
+        //     );
+         $this->crud->addField(
+            [ 
+            'label' => 'Mã thành phố',  
+           'type' => 'select',
+           'name' => 'idTP', // the db column for the foreign key
+           'entity' => 'thanhpho', // the method that defines the relationship in your Model
+           'attribute' => 'tenTP', // foreign key attribute that is shown to user
+           'model' => "App\Models\Thanhpho" // foreign key model
+                ]
             );
         $this->crud->addField(
-            [   // Number
-            'name' => 'idKhuVuc',
-            'label' => 'Mã Khu vực',
-            'type' => 'number'
-            // optionals
-            // 'attributes' => ["step" => "any"], // allow decimals
-            // 'prefix' => "$",
-            // 'suffix' => ".00",
+            [   
+            'label' => 'Mã Khu vực',  
+           'type' => 'select',
+           'name' => 'idKhuVuc', // the db column for the foreign key
+           'entity' => 'khuvuc', // the method that defines the relationship in your Model
+           'attribute' => 'tenKV', // foreign key attribute that is shown to user
+           'model' => "App\Models\Khuvuc" // foreign key model
         ]
             );
         $this->crud->addField(

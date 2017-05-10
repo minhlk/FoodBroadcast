@@ -20,7 +20,7 @@ class HinhthucCrudController extends CrudController
         */
         $this->crud->setModel('App\Models\Hinhthuc');
         $this->crud->setRoute('admin/hinhthuc');
-        $this->crud->setEntityNameStrings('hinhthuc', 'hinhthucs');
+        $this->crud->setEntityNameStrings('hinhthuc', ' Hình thức');
 
         /*
         |--------------------------------------------------------------------------
